@@ -8,6 +8,8 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
 
+
+
   <!-- Favicons -->
   <link rel="icon" type="image/png" " href=" assets/img/logoooooooo55.png">
   <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
@@ -36,6 +38,252 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <!-- galrety-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 0;
+    }
+
+    .gallery-item {
+      width: 150px;
+      height: 100px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.1);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      display: block;
+      margin: auto;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f1f1f1;
+    }
+
+    /* Desktop arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    .arrow:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .prev {
+      left: 20px;
+      transform: translateY(-50%);
+    }
+
+    .next {
+      right: 20px;
+      transform: translateY(-50%);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .arrow {
+        display: none;
+      }
+    }
+  </style>
+  <!-- Video Gallery Section -->
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 0;
+    }
+
+    .gallery-item {
+      width: 200px;
+      height: 120px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 16/9;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #f1f1f1;
+    }
+
+    /* Desktop arrows */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      font-size: 50px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 50%;
+    }
+
+    .arrow:hover {
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .prev {
+      left: 20px;
+      transform: translateY(-50%);
+    }
+
+    .next {
+      right: 20px;
+      transform: translateY(-50%);
+    }
+
+    .video-thumb {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-thumb:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .video-item p {
+      transition: color 0.3s ease;
+    }
+
+    .video-item:hover p {
+      color: #ffcc00;
+    }
+
+    /* MOBILE MODIFICATION */
+    @media (max-width:768px) {
+      .arrow {
+        display: none;
+      }
+
+      /* hide arrows on mobile */
+    }
+  </style>
+
+  <!--contact-->
+  <style>
+    /* New class for contact section text */
+    .contact-text-responsive p {
+      font-size: 18px;
+      /* normal on desktop */
+      line-height: 1.6;
+      color: #fff;
+      margin: 0 auto 20px;
+      max-width: 600px;
+      text-align: center;
+      /* center for all screens */
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .contact-text-responsive p {
+        font-size: 14px;
+        /* smaller font for mobile */
+        padding: 0 15px;
+        /* add some padding on sides */
+      }
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -317,14 +565,13 @@
         <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
           <li class="nav-item col-3">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tabs-tab-1">
-              <img src="assets/img/Équipement de base/iq-panel4.png" alt="Panneau Tactile"
-                style="width: 90px; height: auto;">
+              <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile" style="width: 90px; height: auto;">
               <h4 class="d-none d-lg-block">Panneau Tactile</h4>
             </a>
           </li><!--  -->
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-2">
-              <img src="assets/img/Équipement de base/052145_40e9-removebg-preview.png" alt="Contacts de Porte"
+              <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="Contacts de Porte"
                 style="width: 70px; height: auto;">
               <h4 class="d-none d-lg-block">Contacts de Porte</h4>
             </a>
@@ -334,8 +581,7 @@
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-3">
               <!-- <i class="bi bi-brightness-high"></i> -->
 
-              <img
-                src="assets/img/Équipement de base/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+              <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
                 alt="PDétecteur de Mouvement" style="width: 70px; height: auto;">
               <h4 class="d-none d-lg-block">Détecteur de Mouvement</h4>
             </a>
@@ -345,8 +591,7 @@
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-4">
               <!-- <i class="bi bi-command"></i> -->
 
-              <img src="assets/img/Équipement Extra/cam1.png" alt="Caméra Analytique"
-                style="width: 90px; height: auto;">
+              <img src="assets/img/eqp/cam1.png" alt="Caméra Analytique" style="width: 90px; height: auto;">
               <h4 class="d-none d-lg-block">Caméra Analytique</h4>
             </a>
           </li> <!--  -->
@@ -355,7 +600,7 @@
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-5">
               <!-- <i class="bi bi-command"></i> -->
 
-              <img src="assets/img/Équipement de base/Application_mobile-removebg-preview.png" alt="Applications"
+              <img src="assets/img/eqp/Application_mobile-removebg-preview.png" alt="Applications"
                 style="width: 90px; height: auto;">
               <h4 class="d-none d-lg-block">Applications</h4>
             </a>
@@ -365,8 +610,7 @@
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-6">
               <!-- <i class="bi bi-command"></i> -->
-              <img src="assets/img/Équipement de base/ssssss.png" alt="Liaison à la Centrale"
-                style="width: 90px; height: auto;">
+              <img src="assets/img/eqp/ssssss.png" alt="Liaison à la Centrale" style="width: 90px; height: auto;">
               <h4 class="d-none d-lg-block">Liaison à la Centrale</h4>
             </a>
           </li>
@@ -375,8 +619,7 @@
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-7">
               <!-- <i class="bi bi-command"></i> -->
-              <img src="assets/img/Équipement de base/iii.png" alt="Liaison à la Centrale"
-                style="width: 90px; height: auto;">
+              <img src="assets/img/eqp/iii.png" alt="Liaison à la Centrale" style="width: 90px; height: auto;">
               <h4 class="d-none d-lg-block">Installation</h4>
             </a>
           </li>
@@ -427,7 +670,7 @@
                 </p>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement de base/iq-panel4.png" alt="Math Class"
+                <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile Sans-Fil QOLSYS IQ PANEL 4"
                   style="width: 300px; height: auto;">
               </div>
             </div>
@@ -450,7 +693,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement de base/052145_40e9-removebg-preview.png" alt="Physique Class"
+                <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="contacts de Porte"
                   style="width: 300px; height: auto;">
 
               </div>
@@ -473,9 +716,8 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img
-                  src="assets/img/Équipement de base//qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
-                  alt="Literature Class" class="img-fluid">
+                <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+                  alt="Détecteur de mouvement" class="img-fluid">
               </div>
             </div>
           </div>
@@ -515,8 +757,7 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement Extra/cam2.png" alt="Physique Class"
-                  style="width: 200px; height: auto;">
+                <img src="assets/img/eqp/cam2.png" alt="camera" style="width: 200px; height: auto;">
               </div>
             </div>
           </div>
@@ -545,8 +786,8 @@
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement de base/Application_mobile-removebg-preview.png" alt="English Class"
-                  class="img-fluid style=" width: 300px; height: auto;">
+                <img src="assets/img/eqp//Application_mobile-removebg-preview.png" alt="App" class="img-fluid style="
+                  width: 300px; height: auto;">
               </div>
             </div>
           </div>
@@ -570,8 +811,8 @@
                 </ul> -->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement de base/ssssss.png" alt="La Liaison à la centrale"
-                  class="img-fluid style=" width: 900px; height: auto;">
+                <img src="assets/img/eqp/ssssss.png" alt="La Liaison à la centrale" class="img-fluid style=" width:
+                  900px; height: auto;">
               </div>
             </div>
           </div>
@@ -606,8 +847,8 @@
                 </ul> -->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/Équipement de base/iii.png" alt="Installation rapide et professionnelle"
-                  class="img-fluid style=" width: 300px; height: auto;">
+                <img src="assets/img/eqp/iii.png" alt="Installation rapide et professionnelle" class="img-fluid style="
+                  width: 300px; height: auto;">
               </div>
             </div>
           </div>
@@ -618,7 +859,7 @@
       </div>
     </section>
 
-
+    <!-- partenaire1-->
     <section class="clients section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -658,13 +899,13 @@
             }
           </script>
           <div class="swiper-wrapper justify-content-center">
-            <div class="swiper-slide"><img src="assets/img/Équipement de base/Gardaworld-Symbol.png" class="img-fluid"
+            <div class="swiper-slide"><img src="assets/img/clients/Gardaworld-Symbol.png" class="img-fluid"
                 alt="Gardaworld"></div>
-            <div class="swiper-slide"><img src="assets/img//Équipement de base/securitas-removebg-preview.png"
-                class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/Équipement de base/download-removebg-preview.png"
-                class="img-fluid" alt="Telus"></div>
-            <div class="swiper-slide"><img src="assets/img/Équipement de base/ADT-Logo.png" class="img-fluid" alt="Adt">
+            <div class="swiper-slide"><img src="assets/img/clients/download-removebg-preview.png" class="img-fluid"
+                alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/securitas-removebg-preview.png" class="img-fluid"
+                alt="Telus"></div>
+            <div class="swiper-slide"><img src="assets/img/clients/ADT-Logo.png" class="img-fluid" alt="Adt">
             </div>
             <!-- <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
@@ -677,7 +918,71 @@
       </div>
 
     </section>
+    <!-- -->
+    <!-- Image Gallery Section -->
+    <section class="clients section-bg dark-background">
+      <div class="container" style="text-align:center; gap: 50px;">
+        <div class="gallery">
+          <!-- <img src="assets/img/eqp/bib-removebg-preview.png" class="gallery-item" alt="eqp de base"> -->
+          <img src="assets/img/88888888888888888.PNG" class="gallery-item" alt="camera">
+          <img src="assets/img/kokokokokoko.PNG" class="gallery-item" alt="camera">
+          <img src="assets/img/thefet.PNG" class="gallery-item" alt="camera">
+          <!-- <img src="assets/img/Capture1-removebg-preview.png" class="gallery-item" alt="app">
+      <img src="assets/img/Capture2-removebg-preview.png" class="gallery-item" alt="app">
+      <img src="assets/img/Capture3-removebg-preview.png" class="gallery-item" alt="app">
+      <img src="assets/img/Capture4-removebg-preview.png" class="gallery-item" alt="app">
+      <img src="assets/img/Capture5-removebg-preview.png" class="gallery-item" alt="app"> -->
+        </div>
+      </div>
+    </section>
 
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <span class="close">&times;</span>
+      <span class="arrow prev">&#10094;</span>
+      <span class="arrow next">&#10095;</span>
+      <img class="modal-content" id="modal-img">
+    </div>
+
+
+
+
+
+    <!-- Video Gallery Section -->
+    <section class="video-gallery section" style="padding:50px 0; text-align:center;">
+      <div class="container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:90px;">
+        <!-- Video 1 -->
+        <div class="video-item" data-video="https://www.youtube.com/embed/Dn9q5ToBYeQ">
+          <img src="assets/img/video1-thumb.png.PNG" alt="Video 1" class="video-thumb"
+            style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+          <p style="color:white; margin-top:5px;">Video 1</p>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="video-item" data-video="https://www.youtube.com/embed/b12sdeX48P0">
+          <img src="assets/img/video2-thumb.png.PNG" alt="Video 2" class="video-thumb"
+            style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+          <p style="color:white; margin-top:5px;">Video 2</p>
+        </div>
+      </div>
+      <!-- Video 3 -->
+      <!-- <div class="video-item" data-video="https://www.youtube.com/watch?v=lYQh8OaAp1E">
+      <img src="assets/img/video2-thumb.png.PNG" alt="Video 2" class="video-thumb" style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+      <p style="color:white; margin-top:5px;">Video 2</p>
+    </div>
+  </div> -->
+    </section>
+
+    <!-- Video Modal -->
+    <div id="video-modal"
+      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:9999;">
+      <span id="video-close"
+        style="position:absolute; top:20px; right:30px; font-size:50px; color:white; cursor:pointer;">&times;</span>
+      <!-- <span id="video-prev" class="arrow">&#10094;</span>
+  <span id="video-next" class="arrow">&#10095;</span> -->
+      <iframe id="video-iframe" width="90%" height="80%" src="" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen style="max-width:1200px;"></iframe>
+    </div>
 
 
     <!-- Avis Section 2-->
@@ -732,7 +1037,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/unnamed.png" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/unnamed.png" class="testimonial-img" alt="">
                 <h3> Marie-Danielle Tremblay </h3>
                 <!-- <h4>Terminale S</h4> -->
                 <div class="stars">
@@ -750,7 +1055,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/bbbbbb.png" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/bbbbbb.png" class="testimonial-img" alt="">
                 <h3>Manuel Crespo</h3>
                 <!-- <h4>Designer</h4> -->
                 <div class="stars">
@@ -770,7 +1075,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/Équipement de base/unnamed.png" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/ccc.png" class="testimonial-img" alt="">
                 <h3>Esther Renaud</h3>
                 <!-- <h4>Store Owner</h4> -->
                 <div class="stars">
@@ -787,7 +1092,7 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/bbb.png" class="testimonial-img" alt="">
+                <img src="assets/img/testimonials/bbb.png" class="testimonial-img" alt="">
                 <h3>Lustr'Auto St-Félix</h3>
                 <!-- <h4>Freelancer</h4> -->
                 <div class="stars">
@@ -830,7 +1135,7 @@
             style="display: flex; justify-content: center; align-items: center;">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/1724941129451.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/1724941129451.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
                   <a href="https://www.facebook.com/mohamed.tliliiiii/"><i class="bi bi-facebook"></i></a>
@@ -864,7 +1169,7 @@
     <section id="contact" class="contact section-bg dark-background">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title contact-text-mobile"" data-aos=" fade-up">
         <h2>Contact</h2>
         <p>Je resterai à votre disposition tout au long de votre contrat, et même après. Pour toute information
           supplémentaire ou pour obtenir un devis précis, n'hésitez pas à me communiquer vos disponibilités par
@@ -885,7 +1190,7 @@
                     <i class="bi bi-geo-alt"></i>
                   </a>
                   <h3>Address</h3>
-                  <p style=" white-space: nowrap;">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada</p>
+                  <p style=" ">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada</p>
                 </div>
               </div>
               <!-- End Info Item -->
@@ -913,8 +1218,10 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-              data-aos-delay="500">
+
+
+            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
+
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -937,7 +1244,11 @@
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
+                  <!-- Notification -->
 
+                  <div id="form-notification"
+                    style="display:none; padding:15px; margin-bottom:15px; border-radius:5px; text-align:center; font-weight:bold;">
+                  </div>
                   <button type="submit">Send Message</button>
                 </div>
 
@@ -959,52 +1270,63 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Centre Descartes</span>
+
+            <img src="assets/img/logoooooooo55.png" alt="Solutions Express" ">
+              <span class=" sitename">Solutions Express</span>
+
           </a>
           <div class="footer-contact pt-3">
-            <p>10 Cours Victor Hugo </p>
-            <p>47000 Agen</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>05 53 66 09 98</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
+            <p>4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada </p>
+            <!-- <p>47000 Agen</p> -->
+            <p class="mt-3"><strong>Phone:</strong> <span>+1 450-239-0339</span></p>
+            <p><strong>Email:</strong> <span>info@lessolutionsexpress.ca</span></p>
           </div>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+            <a href="https://www.facebook.com/groupesolutionsexpress.ca/"><i class="bi bi-facebook"></i></a>
+            <!-- <a href=""><i class="bi bi-instagram"></i></a> -->
+            <a href="https://www.linkedin.com/company/groupe-solutions-express/posts/?feedView=all"><i
+                class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
           <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+          <ul id="menu">
+            <li><a href="#accueil" class="active" onclick="setActive(this)">Accueil</a></li>
+            <li><a href="#àpropos" onclick="setActive(this)">À Propos</a></li>
+            <li><a href="#offres" onclick="setActive(this)">Offres</a></li>
+
+
+
           </ul>
         </div>
 
         <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+          <h4></h4>
+          <h4></h4>
+          <ul id="menu">
+
+            <li><a href="#feedback" onclick="setActive(this)">Avis</a></li>
+            <li><a href="#agent" onclick="setActive(this)">Agent</a></li>
+
+
+            <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
           </ul>
         </div>
 
+        <!-- Footer Newsletter Form -->
         <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+          <h4>Abonnez-vous</h4>
+          <p>Abonnez-vous et recevez les dernières nouvelles sur nos produits et services !</p>
+          <form id="newsletter-form" class="php-email-form" style="position:relative;">
+            <div class="newsletter-form" style="display:flex; gap:10px; flex-wrap:wrap;">
+              <input type="email" id="newsletter-email" placeholder="Votre email"
+                style="flex:1; padding:10px 15px; border-radius:8px; border:1px solid #ccc; outline:none; transition: all 0.3s;">
+              <input type="submit" value="S'abonner"
+                style="padding:10px 20px; border:none; border-radius:8px; background:#3E98C7; color:#fff; cursor:pointer; transition:all 0.3s;">
+            </div>
+            <div id="newsletter-msg" style="margin-top:10px; font-weight:bold; opacity:0; transition: all 0.5s;"></div>
           </form>
         </div>
 
@@ -1026,7 +1348,6 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
@@ -1036,6 +1357,207 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- Image Gallery Section-->
+  <script>
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentIndex = 0;
+
+    function openModal(index) {
+      currentIndex = index;
+      modal.style.display = 'flex';
+      modalImg.src = galleryItems[currentIndex].src;
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      modalImg.src = galleryItems[currentIndex].src;
+    }
+
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      modalImg.src = galleryItems[currentIndex].src;
+    }
+
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openModal(index));
+    });
+
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+
+    window.addEventListener('click', (e) => {
+      if (e.target == modal) modal.style.display = 'none';
+    });
+
+    // Optional: arrow keys for desktop
+    window.addEventListener('keydown', (e) => {
+      if (modal.style.display === 'flex') {
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'Escape') modal.style.display = 'none';
+      }
+    });
+  </script>
+
+  <!-- vedio Gallery Section-->
+
+  <script>
+    const videoItems = document.querySelectorAll('.video-item');
+    const videoModal = document.getElementById('video-modal');
+    const videoIframe = document.getElementById('video-iframe');
+    const videoClose = document.getElementById('video-close');
+    const videoPrev = document.getElementById('video-prev');
+    const videoNext = document.getElementById('video-next');
+    let videoIndex = 0;
+
+    function openVideoModal(index) {
+      videoIndex = index;
+      videoModal.style.display = 'flex';
+      videoIframe.src = videoItems[videoIndex].dataset.video + "?autoplay=1";
+    }
+
+    function showNextVideo() {
+      videoIndex = (videoIndex + 1) % videoItems.length;
+      videoIframe.src = videoItems[videoIndex].dataset.video + "?autoplay=1";
+    }
+
+    function showPrevVideo() {
+      videoIndex = (videoIndex - 1 + videoItems.length) % videoItems.length;
+      videoIframe.src = videoItems[videoIndex].dataset.video + "?autoplay=1";
+    }
+
+    videoItems.forEach((item, index) => {
+      item.addEventListener('click', () => openVideoModal(index));
+    });
+
+    videoClose.addEventListener('click', () => {
+      videoModal.style.display = 'none';
+      videoIframe.src = "";
+    });
+
+    videoNext.addEventListener('click', showNextVideo);
+    videoPrev.addEventListener('click', showPrevVideo);
+
+    window.addEventListener('click', (e) => {
+      if (e.target == videoModal) {
+        videoModal.style.display = 'none';
+        videoIframe.src = "";
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (videoModal.style.display === 'flex') {
+        if (e.key === 'ArrowRight') showNextVideo();
+        if (e.key === 'ArrowLeft') showPrevVideo();
+        if (e.key === 'Escape') {
+          videoModal.style.display = 'none';
+          videoIframe.src = "";
+        }
+      }
+    });
+  </script>
+
+
+
+  <!-- email JS  -->
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("XLSAXXvFgA2YsWTjt"); // Your EmailJS Private Key
+    })();
+
+    const form = document.getElementById('contact-form');
+    const notification = document.getElementById('form-notification');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm(
+        'service_b8ih4li',   // Your EmailJS Service ID
+        'template_rs6pwid',  // Your Template ID
+        this
+      ).then(function () {
+        // Show success notification
+        notification.style.display = 'block';
+        notification.style.backgroundColor = '#3E98C7';
+        notification.style.color = 'white';
+        notification.textContent = '✅ Votre message a été envoyé avec succès !';
+        form.reset();
+
+        // Hide after 5 seconds
+        setTimeout(() => {
+          notification.style.display = 'none';
+        }, 5000);
+      }, function (error) {
+        // Show error notification
+        notification.style.display = 'block';
+        notification.style.backgroundColor = '#ff4d4d';
+        notification.style.color = 'white';
+        notification.textContent = '❌ Échec de l\'envoi du message : ' + error.text;
+
+        setTimeout(() => {
+          notification.style.display = 'none';
+        }, 5000);
+      });
+    });
+  </script>
+
+
+  <!--sub-->
+  <script>
+    const newsletterForm = document.getElementById('newsletter-form');
+    const emailInput = document.getElementById('newsletter-email');
+    const msgBox = document.getElementById('newsletter-msg');
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    newsletterForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        msgBox.style.color = '#ff4d4d';
+        msgBox.innerText = "Veuillez entrer votre adresse e-mail.";
+        msgBox.style.opacity = 1;
+        return;
+      }
+
+      if (!validateEmail(email)) {
+        msgBox.style.color = '#ff4d4d';
+        msgBox.innerText = "Adresse e-mail invalide. Veuillez entrer une adresse valide.";
+        msgBox.style.opacity = 1;
+        return;
+      }
+
+      // Email is valid
+      msgBox.style.color = '#3E98C7';
+      msgBox.innerText = "Votre demande d’abonnement a été envoyée. Merci !";
+      msgBox.style.opacity = 1;
+
+      // Optional: clear input
+      emailInput.value = '';
+    });
+
+    // Optional: hide message after 5 seconds
+    emailInput.addEventListener('input', () => {
+      msgBox.style.opacity = 0;
+    });
+  </script>
+
+
 
 </body>
 
