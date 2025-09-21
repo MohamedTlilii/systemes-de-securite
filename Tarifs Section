@@ -1,0 +1,189 @@
+  <!-- Tarifs Section -->
+    <section id="tarifs" class="pricing section section-bg dark-background ">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tarifs</h2>
+        <p>Découvrez nos offres de cours adaptées à chaque niveau scolaire et besoins individuels.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row g-4 g-lg-0">
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Primaire - Collège </h3>
+              <h3>groupe 1 à 3</h3>
+              <ul>
+                <h4><sup>€</sup>16<span> / 1 heure</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+
+                <h4><sup>€</sup>150<span> / 10 heures</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor elit.</span></li>
+
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Call Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Lycée </h3>
+              <h3>groupe 1 à 3</h3>
+
+              <ul>
+                <h4><sup>€</sup>17<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+
+                <h4><sup>€</sup>160<span> / 10 heures</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum adipisicing elit.</span></li>
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Cours Individuels</h3>
+              <h3>Adultes</h3>
+
+              <ul>
+                <h4><sup>€</sup>25<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem adipisicing elit.</span></li>
+
+                <h4><sup>€</sup>22<span> / 10 heures</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+          <!--  -->
+          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Aides aux devoirs </h3>
+              <h3> groupe 1 à 5</h3>
+
+              <ul>
+                <h4><sup>€</sup>12<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem consectetur adipisicing elit.</span></li>
+
+                <h4 class="na"> <sup>€</sup> 00<span> / 10 heures</span></h4>
+                <li class="na"><i class="bi bi-x"></i> <span>non disponible</span></li>
+
+
+
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+
+
+
+          <!--  -->
+        </div>
+
+      </div>
+
+    </section><!-- /Tarifs Section -->  <!-- Tarifs Section -->
+    <section id="tarifs" class="pricing section section-bg dark-background ">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Tarifs</h2>
+        <p>Découvrez nos offres de cours adaptées à chaque niveau scolaire et besoins individuels.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row g-4 g-lg-0">
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Primaire - Collège </h3>
+              <h3>groupe 1 à 3</h3>
+              <ul>
+                <h4><sup>€</sup>16<span> / 1 heure</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+
+                <h4><sup>€</sup>150<span> / 10 heures</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor elit.</span></li>
+
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Call Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Lycée </h3>
+              <h3>groupe 1 à 3</h3>
+
+              <ul>
+                <h4><sup>€</sup>17<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+
+                <h4><sup>€</sup>160<span> / 10 heures</span></h4>
+
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum adipisicing elit.</span></li>
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Cours Individuels</h3>
+              <h3>Adultes</h3>
+
+              <ul>
+                <h4><sup>€</sup>25<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem adipisicing elit.</span></li>
+
+                <h4><sup>€</sup>22<span> / 10 heures</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                </li>
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+          <!--  -->
+          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
+            <div class="pricing-item">
+              <h3>Aides aux devoirs </h3>
+              <h3> groupe 1 à 5</h3>
+
+              <ul>
+                <h4><sup>€</sup>12<span> / 1 heure</span></h4>
+                <li><i class="bi bi-check"></i> <span>Lorem consectetur adipisicing elit.</span></li>
+
+                <h4 class="na"> <sup>€</sup> 00<span> / 10 heures</span></h4>
+                <li class="na"><i class="bi bi-x"></i> <span>non disponible</span></li>
+
+
+
+              </ul>
+              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+            </div>
+          </div><!-- End Pricing Item -->
+
+
+
+
+          <!--  -->
+        </div>
+
+      </div>
+
+    </section><!-- /Tarifs Section -->

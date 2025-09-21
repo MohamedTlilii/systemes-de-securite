@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Presento Bootstrap Template</title>
+  <title>Solutions Express</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/cap.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="icon" type="image/png" " href=" assets/img/logoooooooo55.png">
+  <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -45,24 +45,22 @@
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="assets/img/cap.png" alt="">
-
-        <h1 class="sitename">Centre Descartes
-          <!-- Descartes -->
-          <!-- Soutien Scolaire -->
-          <!-- style="border: 1px solid red;" -->
+        <img src="assets/img/logoooooooo55.png" alt="Solutions Express" ">
+<h1 style=" color:black;" onmouseover="this.style.color='#3E98C7';" onmouseout="this.style.color='black';">
+        Solutions Express
         </h1>
+
         <!-- <span>.</span> -->
       </a>
       <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2860.2903305733475!2d0.6169014760329457!3d44.201086471081425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12abb3228a2485db%3A0xcea28ea42bfce4d2!2s10%20Cr%20Victor%20Hugo%2C%2047000%20Agen%2C%20France!5e0!3m2!1sfr!2stn!4v1728657748063!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#accueil" class="active">Accueil<br></a></li>
-          <li><a href="#àpropos">À propos</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#tarifs">Tarifs</a></li>
-          <li><a href="#équipe">Équipe</a></li>
-          <!-- <li><a href="blog.html">Blog</a></li> -->
+        <ul id="menu">
+          <li><a href="#accueil" class="active" onclick="setActive(this)">Accueil</a></li>
+          <li><a href="#àpropos" onclick="setActive(this)">À Propos</a></li>
+          <li><a href="#offres" onclick="setActive(this)">Offres</a></li>
+          <li><a href="#feedback" onclick="setActive(this)">Avis</a></li>
+          <li><a href="#agent" onclick="setActive(this)">Agent</a></li>
+
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -81,10 +79,33 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+      <style>
+        /* normal color */
+        #menu a {
+          color: black;
+          text-decoration: none;
+        }
+
+        /* active link color */
+        #menu a.active {
+          color: hsl(201, 55%, 51%);
+          /* your blue */
+          font-weight: bold;
+        }
+      </style>
+
+      <script>
+        function setActive(link) {
+          // remove active class from all
+          document.querySelectorAll("#menu a").forEach(a => a.classList.remove("active"));
+          // add active class to the clicked one
+          link.classList.add("active");
+        }
+      </script>
 
       <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
 
@@ -94,24 +115,25 @@
   <main class="main">
 
     <!-- accueil Section -->
-    <section id="accueil" class="hero section">
+    <section id="accueil" class="hero section ">
 
-      <img src="assets/img/Centre.jpg" alt="" data-aos="fade-in">
+      <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité" data-aos="fade-in">
 
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h2 data-aos="fade-up" data-aos-delay="100">Centre Descartes
-              Soutien Scolaire</h2>
-            <p data-aos="fade-up" data-aos-delay="200">10 Cours Victor Hugo
-              47000 Agen
+            <h2 data-aos="fade-up" data-aos-delay="100" style="color: rgb(255, 255, 255); cursor: pointer;"
+              onmouseover="this.style.color='#3E98C7';" onmouseout="this.style.color='rgb(255, 255, 255)';">
+              Groupe Solutions Express
+            </h2>
+            <p data-aos="fade-up" data-aos-delay="200">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada
             </p>
 
-            <p data-aos="fade-up" data-aos-delay="200">Ouvert du lundi au samedi, journée continue de 8h à 20h.
+            <p data-aos="fade-up" data-aos-delay="200">Ouvert du lundi au Vendredi, journée continue de 9h à 22h.
             </p>
 
             <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" class="btn-get-started" id="call-button" onclick="showPhoneNumber()">Renseignement
+              <a href="#" class="btn-get-started" id="call-button" onclick="showPhoneNumber()">Appeler
               </a>
 
               <script>
@@ -121,19 +143,19 @@
                   const button = document.getElementById("call-button");
                   if (!phoneVisible) {
                     // Show the phone number on the first click
-                    button.innerHTML = "05 53 66 09 98";
+                    button.innerHTML = "+1 450-239-0339";
                     phoneVisible = true;
                   } else {
                     // On the second click, make it a phone call link
-                    button.href = "tel:0553660998";
+                    button.href = "tel:4502390339";
                   }
                 }
               </script>
 
 
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                 class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
-                  Video</span></a>
+                  Video</span></a> -->
             </div>
 
           </div>
@@ -145,25 +167,21 @@
 
 
     <!-- àpropos Section -->
-    <section id="àpropos" class="about section ">
+    <section id="àpropos" class="about  section-bg dark-background ">
 
       <div class="container position-relative">
         <div class="container section-title" data-aos="fade-up">
-          <h2>à propos</h2>
+          <h2>À Propos</h2>
         </div>
         <div class="row gy-5">
 
           <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-            <h3>Notre offre</h3>
+            <h3>Meilleures solutions de comparateur de prix</h3>
             <p>
-              Tout au long de l’année scolaire, le Centre Descartes vous propose des cours de remise à niveau, des
-              préparations aux examens (Brevet, Bac, Daeu, BTS) et aux concours, sur place et à domicile.
-              Les professeurs dispensent des cours de : MATHEMATIQUES, FRANCAIS, ANGLAIS, ESPAGNOL, FLE,
-              HISTOIRE-GEOGRAPHIE, PHYSIQUE-CHIMIE, METHODOLOGIE et ECONOMIE.
-              Vous pouvez aussi profiter, entre 16h et 18h de l’aide aux devoirs (du primaire à la classe de 3ème). Un
-              professeur aidera votre enfant.
-              Si au bout d’un trimestre votre enfant ne progresse pas, le Centre Descartes s’engage à lui offrir un
-              stage de 10h (gratuitement).
+              Le stress de se tromper et de signer le mauvais partenaire ? Un comparateur de prix peut changer notre
+              quotidien.
+              Solutions Express est le meilleur courtier en télécommunication & securité.
+              Nous intervenons pour vous guider à choisir l'idéale et la nécessaire solution sur le marché.
             </p>
             <!-- <a href="#" class="about-btn align-self-center align-self-xl-start"><span>About us</span> <i
             class="bi bi-chevron-right"></i></a> -->
@@ -174,29 +192,29 @@
 
               <div class="col-md-6 icon-box position-relative">
                 <i class="bi bi-briefcase"></i>
-                <h4><a class="stretched-link">Historique</a></h4>
-                <p>Le Centre Descartes est né en septembre 2004 de l’association de 2 amis, dont l’objectif était, et
-                  demeure encore, d’aider les élèves rencontrant des difficultés scolaires.</p>
+                <h4><a class="stretched-link">Intervention rapide</a></h4>
+                <!-- <p>Le Centre Descartes est né en septembre 2004 de l’association de 2 amis, dont l’objectif était, et
+                  demeure encore, d’aider les élèves rencontrant des difficultés scolaires.</p> -->
               </div><!-- Icon-Box -->
 
               <div class="col-md-6 icon-box position-relative">
                 <i class="bi bi-gem"></i>
-                <h4><a href="#équipe" class="stretched-link">Équipe pédagogique</a></h4>
-                <p>Depuis sa création, l’équipe pédagogique s’est agrandie et compte désormais 4 professeurs.</p>
+                <h4><a href="#équipe" class="stretched-link">Meilleures offres</a></h4>
+                <!-- <p>Depuis sa création, l’équipe pédagogique s’est agrandie et compte désormais 4 professeurs.</p> -->
               </div><!-- Icon-Box -->
 
               <div class="col-md-6 icon-box position-relative">
                 <i class="bi bi-broadcast"></i>
-                <h4><a class="stretched-link">Réussite</a></h4>
-                <p>A ce jour, plus de 3500 élèves ont déjà fait confiance au Centre Descartes.</p>
+                <h4><a class="stretched-link">Solutions sur mesure</a></h4>
+                <!-- <p>A ce jour, plus de 3500 élèves ont déjà fait confiance au Centre Descartes.</p> -->
               </div><!-- Icon-Box -->
 
-              <div class="col-md-6 icon-box position-relative">
+              <!--   <div class="col-md-6 icon-box position-relative">
                 <i class="bi bi-easel"></i>
                 <h4><a class="stretched-link">Locaux</a></h4>
                 <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
                   3 salles de cours.</p>
-              </div><!-- Icon-Box -->
+              </div>Icon-Box -->
 
             </div>
           </div>
@@ -209,147 +227,399 @@
 
 
 
+    <!-- offre 1 Section -->
+    <section id="offres" class="about section ">
+
+      <div class="container position-relative">
+        <div class="container section-title" data-aos="fade-up">
+          <h2>Offres</h2>
+        </div>
+        <div class="row gy-5">
+
+
+          <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+              <h2><a class="stretched-link">Offre spéciale</a></h2>
+              <p style="color: black;">
+                Actuellement, nous vous proposons un package complet gratuit, comprenant des équipements d'une valeur de
+                1600 à 3000 dollars, à 0 $. Vous ne paierez que des mensualités très abordables pour la centrale. De
+                plus, nous avons des promotions spéciales en ce moment. Même si vous disposez déjà d'un système, nous
+                pouvons vous aider à le moderniser sans frais, tout en réduisant vos mensualités.
+              </p>
+            </div>
+
+            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+              <h2><a class="stretched-link">Options de déménagement</a></h2>
+              <h5>En cas de déménagement, vous avez plusieurs solutions flexibles</h5>
+              <p style="color: black;">1-Transfert du système : Nous envoyons gratuitement un technicien pour
+                désinstaller et réinstaller le système dans votre nouveau domicile.</p>
+              <p style="color: black;">2-Transfert de contrat : Vous pouvez transférer votre contrat à un nouveau
+                propriétaire à votre ancienne adresse.</p>
+              <p style="color: black;">3-Installation dans votre nouveau domicile : Vous pouvez également transférer le
+                système dans votre nouvelle maison.</p>
+            </div>
+
+            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+              <h2><a class="stretched-link">Avantages à la fin du contrat</a></h2>
+              <p style="color: black;">
+                À la fin de votre contrat, tous les équipements vous appartiendront. Vous bénéficierez d'un rabais sur
+                les mensualités pouvant atteindre 20%-30%, ainsi que d'une modernisation gratuite des équipements.
+                Pendant la durée du contrat, vous profiterez d'un service après-vente de qualité avec une garantie sur
+                les équipements.
+              </p>
+            </div>
+
+
+
+
+            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+              <h2><a class="stretched-link">Ajouter des équipements</a></h2>
+              <p style="color: black;">
+                Si vous souhaitez ajouter des équipements par la suite, je vous enverrai une soumission détaillée avec
+                tous les prix, ce qui vous permettra de prendre le temps de réfléchir en toute tranquillité.
+              </p>
+            </div>
+          </div>
+
+
+          <!--   <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a class="stretched-link">Locaux</a></h4>
+                <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
+                  3 salles de cours.</p>
+              </div>Icon-Box -->
+
+        </div>
+      </div>
+
+      </div>
+
+      </div>
+
+    </section><!-- /offre 1 Section -->
 
 
 
 
 
-
-    <!-- Services Section -->
-    <section id="services" class="tabs section section-bg dark-background">
+    <!-- offres Section 2 -->
+    <section class="tabs section section-bg dark-background">
       <div class="container position-relative">
         <div class="section-title" data-aos="fade-up">
-          <h2>Services</h2>
+          <!-- <h2>Offres</h2> -->
+          <p>Notre offre actuelle comprend des avantages et des promotions pour ce mois-ci
+          </p>
+          <h1 style="color:#3E98C7;">Les Équipements Gratuits</h1>
+
         </div>
 
         <!-- Tab Navigation -->
         <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
           <li class="nav-item col-3">
             <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tabs-tab-1">
-              <i class="bi bi-binoculars"></i>
-              <h4 class="d-none d-lg-block">Maths</h4>
+              <img src="assets/img/Équipement de base/iq-panel4.png" alt="Panneau Tactile"
+                style="width: 90px; height: auto;">
+              <h4 class="d-none d-lg-block">Panneau Tactile</h4>
             </a>
-          </li>
+          </li><!--  -->
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-2">
-              <i class="bi bi-box-seam"></i>
-              <h4 class="d-none d-lg-block">Physique-Chimie</h4>
+              <img src="assets/img/Équipement de base/052145_40e9-removebg-preview.png" alt="Contacts de Porte"
+                style="width: 70px; height: auto;">
+              <h4 class="d-none d-lg-block">Contacts de Porte</h4>
             </a>
-          </li>
+          </li> <!--  -->
+
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-3">
-              <i class="bi bi-brightness-high"></i>
-              <h4 class="d-none d-lg-block">Matières Littéraires</h4>
+              <!-- <i class="bi bi-brightness-high"></i> -->
+
+              <img
+                src="assets/img/Équipement de base/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+                alt="PDétecteur de Mouvement" style="width: 70px; height: auto;">
+              <h4 class="d-none d-lg-block">Détecteur de Mouvement</h4>
             </a>
-          </li>
+          </li> <!--  -->
+
           <li class="nav-item col-3">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-4">
-              <i class="bi bi-command"></i>
-              <h4 class="d-none d-lg-block">Anglais</h4>
+              <!-- <i class="bi bi-command"></i> -->
+
+              <img src="assets/img/Équipement Extra/cam1.png" alt="Caméra Analytique"
+                style="width: 90px; height: auto;">
+              <h4 class="d-none d-lg-block">Caméra Analytique</h4>
+            </a>
+          </li> <!--  -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-5">
+              <!-- <i class="bi bi-command"></i> -->
+
+              <img src="assets/img/Équipement de base/Application_mobile-removebg-preview.png" alt="Applications"
+                style="width: 90px; height: auto;">
+              <h4 class="d-none d-lg-block">Applications</h4>
             </a>
           </li>
+          <!--  -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-6">
+              <!-- <i class="bi bi-command"></i> -->
+              <img src="assets/img/Équipement de base/ssssss.png" alt="Liaison à la Centrale"
+                style="width: 90px; height: auto;">
+              <h4 class="d-none d-lg-block">Liaison à la Centrale</h4>
+            </a>
+          </li>
+          <!--  -->
+
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-7">
+              <!-- <i class="bi bi-command"></i> -->
+              <img src="assets/img/Équipement de base/iii.png" alt="Liaison à la Centrale"
+                style="width: 90px; height: auto;">
+              <h4 class="d-none d-lg-block">Installation</h4>
+            </a>
+          </li>
+          <!--  -->
+
         </ul>
 
         <!-- Tab Content -->
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
 
-          <!-- Maths Tab -->
+          <!-- Panneau Tactile -->
           <div class="tab-pane fade active show" id="tabs-tab-1">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Maths</h3>
+                <h3>Panneau Tactile Sans-Fil QOLSYS IQ PANEL 4</h3>
                 <p class="fst-italic">
-                  Nos cours de mathématiques sont disponibles pour tous les niveaux, de l'école primaire aux classes
-                  préparatoires. Nous aidons nos élèves à consolider leurs bases et à réussir leurs examens.
+                  Notre dernier panneau tactile de pointe, conçu pour assurer une sécurité optimale et une utilisation
+                  conviviale.
+
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> Remise à niveau en mathématiques pour tous les niveaux.</li>
-                  <li><i class="bi bi-check2-all"></i> Aide personnalisée pour préparer le Brevet et le Bac.</li>
-                  <li><i class="bi bi-check2-all"></i> Ateliers de résolution de problèmes et méthodologie.</li>
+                  <li><i class="bi bi-check2-all"></i> Sirène Intégrée : En cas de danger détecté, la sirène intégrée
+                    retentit dans toute votre maison, attirant immédiatement l'attention sur toute situation anormale.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Appareil Photo de 8 MP Intégré sur le Panneau : Une caméra haute
+                    résolution directement intégrée au panneau pour capturer des images nettes et utiles en cas
+                    d'événements importants.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Détecteur de bris de verre Intégré sur le Panneau : Toute casse
+                    de vitre dans un rayon de 40 pieds sera instantanément signalée à notre centrale de surveillance, et
+                    vous recevrez une notification sur votre téléphone pour une réaction rapide.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Carillon : Recevez un signal sonore à chaque ouverture de porte,
+                    idéal pour être informé des entrées et sorties, notamment si vous avez des enfants.
+
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Carte GSM LTE : Garantissez une liaison ininterrompue avec notre
+                    centrale grâce à une carte LTE, même en cas de coupure de lignes téléphoniques traditionnelles.
+
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Batterie de secours : Avec jusqu'à 80 heures d'autonomie en cas
+                    d'urgence, vous pouvez être sûr que votre système reste opérationnel même lors de pannes
+                    électriques.
+                  </li>
                 </ul>
-                <p>
+                <!--  <p>
                   Nos professeurs qualifiés vous accompagnent individuellement pour garantir des progrès visibles.
-                </p>
+                </p>-->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-1.jpg" alt="Math Class" class="img-fluid">
+                <img src="assets/img/Équipement de base/iq-panel4.png" alt="Math Class"
+                  style="width: 300px; height: auto;">
               </div>
             </div>
           </div>
 
-          <!-- Physique-Chimie Tab -->
+          <!-- contacts de Porte  -->
           <div class="tab-pane fade" id="tabs-tab-2">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Physique-Chimie</h3>
+                <h3>Contacts de Porte Sans-Fils ( x2 )</h3>
                 <p>
-                  Nos cours de physique-chimie permettent de maîtriser les concepts clés et de réussir les examens, du
-                  Brevet au Bac.
+                  Nous protégerons toutes les portes donnant sur l'extérieur pour prévenir les intrusions. De plus, ces
+                  dispositifs vous tiendront informé de l'état de vos portes.
+
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> Préparation aux épreuves du Brevet et du Bac.</li>
-                  <li><i class="bi bi-check2-all"></i> Apprentissage des concepts fondamentaux en physique et chimie.
+                  <li><i class="bi bi-check2-all"></i> Alimentation : Pile longue durée.
                   </li>
-                  <li><i class="bi bi-check2-all"></i> Exercices pratiques et méthodologiques pour les problèmes
-                    complexes.</li>
+
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-2.jpg" alt="Physique Class" class="img-fluid">
+                <img src="assets/img/Équipement de base/052145_40e9-removebg-preview.png" alt="Physique Class"
+                  style="width: 300px; height: auto;">
+
               </div>
             </div>
           </div>
 
-          <!-- Matières Littéraires Tab -->
+          <!--  Détecteur de mouvement-->
           <div class="tab-pane fade" id="tabs-tab-3">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Matières Littéraires</h3>
+                <h3>Détecteur de mouvement</h3>
                 <p>
-                  Nous proposons des cours spécialisés pour renforcer vos compétences en littérature, de l'analyse de
-                  texte à la dissertation.
+                  Installé par un de nos techniciens, il sera positionné stratégiquement pour assurer une protection
+                  optimale contre les intrusions, notamment par les fenêtres.
+
                 </p>
                 <ul>
-                  <li><i class="bi bi-check2-all"></i> Apprentissage de l'analyse littéraire.</li>
-                  <li><i class="bi bi-check2-all"></i> Ateliers de dissertation et rédaction.</li>
-                  <li><i class="bi bi-check2-all"></i> Préparation aux examens du Brevet et du Bac.</li>
+                  <li><i class="bi bi-check2-all"></i> Alimentation : Pile longue durée.
+
                 </ul>
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-3.jpg" alt="Literature Class" class="img-fluid">
+                <img
+                  src="assets/img/Équipement de base//qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+                  alt="Literature Class" class="img-fluid">
               </div>
             </div>
           </div>
 
-          <!-- English Tab -->
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- camera -->
           <div class="tab-pane fade" id="tabs-tab-4">
             <div class="row">
               <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Anglais</h3>
+                <h3>Caméra Analytique Intérieure ou Extérieure</h3>
                 <p>
-                  Nos cours d'anglais s'adaptent à tous les niveaux, du débutant à l'avancé, avec une préparation aux
-                  examens comme le TOEIC, TOEFL et IELTS.
+                  Cette caméra polyvalente peut être programmée pour l'enregistrement par détection de mouvement avec
+                  une option de microphone pour surveiller votre commerce ou votre maison de manière efficace.
+
                 </p>
                 <ul>
+                  <li><i class="bi bi-check2-all"></i> Enregistrement vidéo qui commence dès que la caméra détecte du
+                    mouvement.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Application qui permet de regarder, de partager et d’enregistrer
+                    jusqu’à 3 000 vidéos.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Forfaits qui peuvent prendre en charge jusqu’à quatre caméras.
+
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/Équipement Extra/cam2.png" alt="Physique Class"
+                  style="width: 200px; height: auto;">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- app -->
+          <div class="tab-pane fade" id="tabs-tab-5">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Applications Alarm.com </h3>
+                <p>
+                  Permettent de :
+
+                </p>
+                <ul>
+                  <li><i class="bi bi-check2-all"></i> Armer et désarmer le système à distance.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Attribuer des codes à chaque utilisateur.</li>
+                  <li><i class="bi bi-check2-all"></i> Avoir l'historique des déplacements.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Notifications personnalisables selon le besoin.
+                  </li>
+                  <li><i class="bi bi-check2-all"></i> Option Bidirectionnelle.
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/Équipement de base/Application_mobile-removebg-preview.png" alt="English Class"
+                  class="img-fluid style=" width: 300px; height: auto;">
+              </div>
+            </div>
+          </div>
+
+          <!-- centrale -->
+          <div class="tab-pane fade" id="tabs-tab-6">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>La Liaison à la centrale</h3>
+                <p>
+                  Reliée avec une ligne (LTE + APPLICATION)
+                  Nous exploitons des centres de télésurveillance homologués ULC qui se conforment aux normes nationales
+                  strictes concernant l’installation de systèmes de sécurité et le traitement des alarmes.
+
+                </p>
+                <!-- <ul>
                   <li><i class="bi bi-check2-all"></i> Cours adaptés à tous les niveaux.</li>
                   <li><i class="bi bi-check2-all"></i> Préparation aux examens internationaux.</li>
                   <li><i class="bi bi-check2-all"></i> Sessions de conversation pour améliorer la fluidité à l'oral.
                   </li>
-                </ul>
+                </ul> -->
               </div>
               <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/working-4.jpg" alt="English Class" class="img-fluid">
+                <img src="assets/img/Équipement de base/ssssss.png" alt="La Liaison à la centrale"
+                  class="img-fluid style=" width: 900px; height: auto;">
               </div>
             </div>
           </div>
+
+
+
+
+          <!-- instalasiton -->
+          <div class="tab-pane fade" id="tabs-tab-7">
+            <div class="row">
+              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Installation rapide et professionnelle
+                </h3>
+                <p>
+                  C'est un avantage considérable de notre système de sécurité, il peut être installé rapidement et de
+                  manière professionnelle sans nécessiter de modifications esthétiques majeures dans votre maison ou
+                  dans votre commerce , alors il n'y aura pas de travaux de rénovation à prévoir.
+                  Nous installerons le panneau tactile de 7 pouces de manière esthétique.
+                  Tous les autres composants de notre système, y compris les détecteurs de mouvement, les contacts de
+                  porte et les autres capteurs, sont sans fil. Cela signifie qu'ils peuvent être placés stratégiquement
+                  où vous le souhaitez sans les contraintes du câblage.
+                  Notre équipe de techniciens professionnels s'occupera de l'installation de manière rapide et efficace.
+                  Ils sont formés pour garantir que chaque composant est correctement positionné et configuré pour une
+                  sécurité optimale.
+
+                </p>
+                <!-- <ul>
+                  <li><i class="bi bi-check2-all"></i> Cours adaptés à tous les niveaux.</li>
+                  <li><i class="bi bi-check2-all"></i> Préparation aux examens internationaux.</li>
+                  <li><i class="bi bi-check2-all"></i> Sessions de conversation pour améliorer la fluidité à l'oral.
+                  </li>
+                </ul> -->
+              </div>
+              <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <img src="assets/img/Équipement de base/iii.png" alt="Installation rapide et professionnelle"
+                  class="img-fluid style=" width: 300px; height: auto;">
+              </div>
+            </div>
+          </div>
+
+
 
         </div>
       </div>
     </section>
 
 
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
+    <section class="clients section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -387,126 +657,47 @@
               }
             }
           </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+          <div class="swiper-wrapper justify-content-center">
+            <div class="swiper-slide"><img src="assets/img/Équipement de base/Gardaworld-Symbol.png" class="img-fluid"
+                alt="Gardaworld"></div>
+            <div class="swiper-slide"><img src="assets/img//Équipement de base/securitas-removebg-preview.png"
+                class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/Équipement de base/download-removebg-preview.png"
+                class="img-fluid" alt="Telus"></div>
+            <div class="swiper-slide"><img src="assets/img/Équipement de base/ADT-Logo.png" class="img-fluid" alt="Adt">
+            </div>
+            <!-- <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
           </div>
           <div class="swiper-pagination"></div>
         </div>
 
       </div>
 
-    </section><!-- /Clients Section -->
+    </section>
 
-    <!-- Tarifs Section -->
-    <section id="tarifs" class="pricing section section-bg dark-background ">
+
+
+    <!-- Avis Section 2-->
+
+    <section id="feedback" class="testimonials section-bg dark-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Tarifs</h2>
-        <p>Découvrez nos offres de cours adaptées à chaque niveau scolaire et besoins individuels.</p>
-      </div><!-- End Section Title -->
+        <h2>Avis</h2>
 
-      <div class="container">
+        <div class="stars" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+          <p style="margin: 0;">4,9</p>
+          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
 
-        <div class="row g-4 g-lg-0">
-
-          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Primaire - Collège </h3>
-              <h3>groupe 1 à 3</h3>
-              <ul>
-                <h4><sup>€</sup>16<span> / 1 heure</span></h4>
-
-                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </li>
-
-                <h4><sup>€</sup>150<span> / 10 heures</span></h4>
-
-                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor elit.</span></li>
-
-              </ul>
-              <!-- <div class="text-center"><a href="#" class="buy-btn">Call Now</a></div> -->
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item">
-              <h3>Lycée </h3>
-              <h3>groupe 1 à 3</h3>
-
-              <ul>
-                <h4><sup>€</sup>17<span> / 1 heure</span></h4>
-                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </li>
-
-                <h4><sup>€</sup>160<span> / 10 heures</span></h4>
-
-                <li><i class="bi bi-check"></i> <span>Lorem ipsum adipisicing elit.</span></li>
-              </ul>
-              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-3" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Cours Individuels</h3>
-              <h3>Adultes</h3>
-
-              <ul>
-                <h4><sup>€</sup>25<span> / 1 heure</span></h4>
-                <li><i class="bi bi-check"></i> <span>Lorem adipisicing elit.</span></li>
-
-                <h4><sup>€</sup>22<span> / 10 heures</span></h4>
-                <li><i class="bi bi-check"></i> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-                </li>
-              </ul>
-              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
-            </div>
-          </div><!-- End Pricing Item -->
-          <!--  -->
-          <div class="col-lg-3 featured" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item">
-              <h3>Aides aux devoirs </h3>
-              <h3> groupe 1 à 5</h3>
-
-              <ul>
-                <h4><sup>€</sup>12<span> / 1 heure</span></h4>
-                <li><i class="bi bi-check"></i> <span>Lorem consectetur adipisicing elit.</span></li>
-
-                <h4 class="na"> <sup>€</sup> 00<span> / 10 heures</span></h4>
-                <li class="na"><i class="bi bi-x"></i> <span>non disponible</span></li>
-
-
-
-              </ul>
-              <!-- <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
-            </div>
-          </div><!-- End Pricing Item -->
-
-
-
-
-          <!--  -->
         </div>
-
-      </div>
-
-    </section><!-- /Tarifs Section -->
-
-    <!-- Temoignages Section -->
-    <section id="" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Temoignages</h2>
-        <p>Découvrez ce que nos étudiants et parents disent de nos services et de notre soutien personnalisé.</p>
+        <!-- <p> 211 avis</p> -->
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -541,29 +732,17 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3> Antoine </h3>
-                <h4>Terminale S</h4>
+                <img src="assets/img/unnamed.png" class="testimonial-img" alt="">
+                <h3> Marie-Danielle Tremblay </h3>
+                <!-- <h4>Terminale S</h4> -->
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span> Au fil de mon année de terminale S, je me suis rendu compte que j'avais de lourdes lacunes dans
-                    toutes les matières scientifiques. C'est pourquoi, pour rattraper mon retard, je me suis inscrit au
-                    centre Descartes aux cours de mathématiques (proposés par M. BILLEL) et Physique-Chimie (proposés
-                    par Y.MAZEL) pour passer mon bac dans les meilleures conditions possibles.
-                    Les cours que je suivais au sein du centre me paraissaient vraiment différents des cours enseignés
-                    au lycée. En effet j'ai bénéficié d'un suivi individuel bien plus optimal : j'avançais à mon rythme,
-                    c'est à moi que revenais le choix des chapitres à traiter selon mes difficultés et j'avais des
-                    réponses à toutes les questions que je me posais.
-                    De ce fait, je me sentais vraiment encadré, épaulé par un cadre pédagogique bien plus humain et
-                    compréhensif que dans le cursus scolaire habituel. Grâce à cela, la vitesse d'assimilation a été
-                    multipliée, ce qui m'a permis de rattraper le retard accumulé en quelques semaines seulement. Je
-                    cite mon cas afin que vous vous fassiez une idée des progrès réalisables : je partais de 8 de
-                    moyenne en physique-chimie et d'un petit 6 en mathématiques un mois avant de prendre des cours, et
-                    j'ai finalement obtenu les notes respectives de 15 et 13 lors des résultats du BAC S.</span>
+                  <span> J'ai été très satisfaite du service offert par Groupe Solutions Express. L’équipe a été rapide,
+                    efficace et courtoise à chaque interaction. </span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -571,17 +750,19 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
+                <img src="assets/img/bbbbbb.png" class="testimonial-img" alt="">
+                <h3>Manuel Crespo</h3>
+                <!-- <h4>Designer</h4> -->
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram
-                    malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                  <span>Très satisfaits du produit: il est fiable et convivial. C’est une grande amélioration
+                    comparativement au système que nous avions auparavant. Le service après vente est très bon. Nos
+                    remerciements à l’equipe.
+                  </span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -589,17 +770,16 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
+                <img src="assets/img/Équipement de base/unnamed.png" class="testimonial-img" alt="">
+                <h3>Esther Renaud</h3>
+                <!-- <h4>Store Owner</h4> -->
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis
-                    minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                  <span>Installation facile , rapide et efficace. Excellent service. </span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -607,41 +787,23 @@
 
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
+                <img src="assets/img/bbb.png" class="testimonial-img" alt="">
+                <h3>Lustr'Auto St-Félix</h3>
+                <!-- <h4>Freelancer</h4> -->
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                     class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim
-                    velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                    veniam.</span>
+                  <span>Très satisfait de Sed mon représentant et équipe installation .
+                    Très bon service .</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
             </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim
-                    culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum
-                    quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!-- End testimonial item -->
+
 
           </div>
           <div class="swiper-pagination"></div>
@@ -649,100 +811,48 @@
 
       </div>
 
-    </section><!-- /Temoignages Section -->
+    </section>
 
-    <!-- Team Section -->
-    <section id="équipe" class="team section section-bg dark-background">
+    <!-- agent Section -->
+    <section id="agent" class="team section ">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Équipe</h2>
-        <p>Si vous préférez contacter directement les professeurs.</p>
+        <h2>Agent</h2>
+        <!-- <p>Med tlili/alex</p> -->
       </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class=" " data-aos="fade-up" data-aos-delay="100"
+            style="display: flex; justify-content: center; align-items: center;">
             <div class="team-member">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/1724941129451.jpg" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
+                  <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+                  <a href="https://www.facebook.com/mohamed.tliliiiii/"><i class="bi bi-facebook"></i></a>
+                  <a href="https://www.instagram.com/tliliimohamed/"><i class="bi bi-instagram"></i></a>
+                  <a href="https://www.linkedin.com/in/mohamed-tlili-/"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>M. Bilel </h4>
-                <span>Matières Scientifiques Maths</span>
-                <span>06 99 74 29 30</span>
-                <span>SIRET N° 478 773 542 00012</span>
+                <h4>M. Alex </h4>
+                <span>Technico commercial</span>
+                <span>450-382-0014
+                </span>
+                <!-- <span>SIRET N° 478 773 542 00012</span> -->
               </div>
             </div>
           </div><!-- End Team Member -->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>M. Penicaud</h4>
-                <span>Matières Scientifiques Physique-Chimie</span>
-                <span>06 63 15 30 39</span>
-                <span> SIRET N° 843 999 863 00015</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Mme Bissiéres</h4>
-                <span>Matières Littéraires</span>
-                <span>06 63 15 37 28</span>
-                <span> SIRET N° 805 179 413 00010</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4> Mme Dubois</h4>
-                <span>Anglais</span>
-                <span>05 53 48 02 91</span>
-                <span> SIRET N° 388 220 949 00019</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+
+
+
 
         </div>
 
@@ -751,12 +861,14 @@
     </section><!-- /Team Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="contact" class="contact section-bg dark-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Pour tout renseignement, n'hésitez pas à nous laisser un message . Nous vous contacterons dès que possible.
+        <p>Je resterai à votre disposition tout au long de votre contrat, et même après. Pour toute information
+          supplémentaire ou pour obtenir un devis précis, n'hésitez pas à me communiquer vos disponibilités par
+          courriel. Je vous recontacterai au moment qui vous conviendra le mieux.
         </p>
       </div><!-- End Section Title -->
 
@@ -773,7 +885,7 @@
                     <i class="bi bi-geo-alt"></i>
                   </a>
                   <h3>Address</h3>
-                  <p style=" white-space: nowrap;">10 Cours Victor Hugo, 47000 Agen</p>
+                  <p style=" white-space: nowrap;">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada</p>
                 </div>
               </div>
               <!-- End Info Item -->
@@ -782,8 +894,9 @@
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
                   data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
-                  <h3>Appelez-Nous</h3>
-                  <p>05 53 66 09 98</p>
+                  <h3>Appelez</h3>
+                  <p>450-382-0014
+                  </p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -791,8 +904,8 @@
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
                   data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
+                  <h3>Email</h3>
+                  <p>mralexqcc@gmail.com</p>
                 </div>
               </div><!-- End Info Item -->
 
@@ -840,18 +953,18 @@
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
+  <footer id="footer" class="footer ">
 
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Presento</span>
+            <span class="sitename">Centre Descartes</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+            <p>10 Cours Victor Hugo </p>
+            <p>47000 Agen</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>05 53 66 09 98</span></p>
             <p><strong>Email:</strong> <span>info@example.com</span></p>
           </div>
           <div class="social-links d-flex mt-4">
@@ -897,18 +1010,14 @@
 
       </div>
     </div>
-
+    <!--  
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Presento</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
-
+  -->
   </footer>
 
   <!-- Scroll Top -->
