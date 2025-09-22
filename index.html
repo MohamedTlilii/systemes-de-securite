@@ -259,6 +259,27 @@
       /* hide arrows on mobile */
     }
   </style>
+  <!--visible email appele-->
+  <style>
+    /* Ensure these info items are always visible (override AOS/hiding bugs) */
+    .info-item.always-show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      transition: none !important;
+      display: flex !important;
+      /* Defensive: if something set display none, force block */
+    }
+
+    /* Make sure icons & text contrast and are on top */
+    .info-item.always-show i,
+    .info-item.always-show h3,
+    .info-item.always-show p {
+      color: inherit;
+      z-index: 3;
+    }
+  </style>
+
 
   <!--contact-->
   <style>
@@ -284,6 +305,151 @@
       }
     }
   </style>
+
+  <style>
+    #àpropos.section-bg.dark-background,
+    #contact.section-bg.dark-background,
+    #feedback.section-bg.dark-background,
+    #idimggalagala.section-bg.dark-background,
+    #zzz.section-bg.dark-background {
+      background-color: #1B1B1B !important;
+      /* Dark background */
+      color: #ffffff;
+      /* Ensure text stays readable */
+    }
+
+    /* Hide span on mobile */
+    @media (max-width: 768px) {
+      #offresTabs .nav-link span {
+        display: none;
+      }
+    }
+  </style>
+
+
+
+  <!--talblu-->
+  <!-- Additional CSS for Modern Look -->
+  <style>
+    /* Existing styles */
+    #offresTabs .nav-link {
+      background: #222;
+      color: #ccc;
+      border-radius: 10px;
+      padding: 10px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      font-weight: 500;
+      transition: all 0.3s;
+      border: none;
+
+      /* NEW: make all nav-link same width and height */
+      width: 120px;
+      /* adjust as needed */
+      height: 150px;
+      /* adjust as needed */
+      justify-content: center;
+      /* center content vertically */
+      text-align: center;
+    }
+
+    #offresTabs .nav-link.active {
+      background: #3E98C7;
+      color: #fff;
+    }
+
+    /* Images keep their natural size */
+    #offresTabs .nav-link img {
+      width: auto;
+      /* keep original width */
+      height: auto;
+      /* keep original height */
+      max-width: 100%;
+      /* prevent overflow */
+      max-height: 80px;
+      /* optional: cap max height for layout */
+    }
+
+    #offresTabs .nav-link span {
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    #offresTabsContent ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #offresTabsContent ul li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      #offresTabs .nav-link {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+
+      #offresTabs .nav-link span {
+        text-align: left;
+      }
+    }
+
+    #offresTabs.nav-tabs {
+      border-bottom: none !important;
+    }
+  </style>
+
+  <style>
+    /* Hover effect on agent image */
+    .member-img:hover img.agent-photo {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+    }
+
+    .member-img:hover .overlay {
+      opacity: 1;
+    }
+
+    /* Smooth transition */
+    .agent-photo,
+    .overlay {
+      transition: all 0.3s ease;
+    }
+  </style>
+
+  <style>
+    /* Social icon hover effect */
+    .social a {
+      transition: transform 0.3s;
+    }
+
+    .social a:hover {
+      transform: scale(1.5);
+      /* increase size on hover */
+    }
+  </style>
+
+
+  <style>
+    #zzz .nav-link {
+      transition: transform 0.3s, box-shadow 0.3s;
+      /* smooth hover effect */
+    }
+
+    #zzz .nav-link:hover {
+      transform: scale(1.1);
+      /* grow the whole cadre */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      /* optional shadow */
+    }
+  </style>
+
 </head>
 
 <body class="index-page">
@@ -294,7 +460,7 @@
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <img src="assets/img/logoooooooo55.png" alt="Solutions Express" ">
-<h1 style=" color:black;" onmouseover="this.style.color='#3E98C7';" onmouseout="this.style.color='black';">
+<h1  style=" color:black ; " onmouseover=" this.style.color='#3E98C7' ;" onmouseout="this.style.color='black' ;">
         Solutions Express
         </h1>
 
@@ -306,8 +472,11 @@
           <li><a href="#accueil" class="active" onclick="setActive(this)">Accueil</a></li>
           <li><a href="#àpropos" onclick="setActive(this)">À Propos</a></li>
           <li><a href="#offres" onclick="setActive(this)">Offres</a></li>
+          <li><a href="#idimggalagala" onclick="setActive(this)">Images</a></li>
+          <li><a href="#video-gallery" onclick="setActive(this)">Vedio</a></li>
           <li><a href="#feedback" onclick="setActive(this)">Avis</a></li>
           <li><a href="#agent" onclick="setActive(this)">Agent</a></li>
+          <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
 
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -327,7 +496,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li> -->
-          <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
+
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -358,514 +527,407 @@
       <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
 
     </div>
-  </header>
+  </header <main class="main">
 
-  <main class="main">
+  <!-- accueil Section -->
+  <section id="accueil" class="hero section ">
 
-    <!-- accueil Section -->
-    <section id="accueil" class="hero section ">
+    <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité" data-aos="fade-in">
 
-      <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité" data-aos="fade-in">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2 style="color: rgb(255, 255, 255); cursor: pointer;" onmouseover="this.style.color='#3E98C7';"
+            onmouseout="this.style.color='rgb(255, 255, 255)';">
+            Groupe Solutions Express
+          </h2>
+          <p data-aos-delay="200">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada
+          </p>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2 data-aos="fade-up" data-aos-delay="100" style="color: rgb(255, 255, 255); cursor: pointer;"
-              onmouseover="this.style.color='#3E98C7';" onmouseout="this.style.color='rgb(255, 255, 255)';">
-              Groupe Solutions Express
-            </h2>
-            <p data-aos="fade-up" data-aos-delay="200">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada
-            </p>
+          <p data-aos-delay="200">Ouvert du lundi au Vendredi, journée continue de 9h à 22h.
+          </p>
 
-            <p data-aos="fade-up" data-aos-delay="200">Ouvert du lundi au Vendredi, journée continue de 9h à 22h.
-            </p>
+          <div class="d-flex mt-4" data-aos-delay="300">
+            <a href="#" class="btn-get-started" id="call-button" onclick="showPhoneNumber()">Appeler
+            </a>
 
-            <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
-              <a href="#" class="btn-get-started" id="call-button" onclick="showPhoneNumber()">Appeler
-              </a>
+            <script>
+              let phoneVisible = false;
 
-              <script>
-                let phoneVisible = false;
-
-                function showPhoneNumber() {
-                  const button = document.getElementById("call-button");
-                  if (!phoneVisible) {
-                    // Show the phone number on the first click
-                    button.innerHTML = "+1 450-239-0339";
-                    phoneVisible = true;
-                  } else {
-                    // On the second click, make it a phone call link
-                    button.href = "tel:4502390339";
-                  }
+              function showPhoneNumber() {
+                const button = document.getElementById("call-button");
+                if (!phoneVisible) {
+                  // Show the phone number on the first click
+                  button.innerHTML = "+1 450-239-0339";
+                  phoneVisible = true;
+                } else {
+                  // On the second click, make it a phone call link
+                  button.href = "tel:4502390339";
                 }
-              </script>
+              }
+            </script>
 
 
-              <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
+            <!-- <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8"
                 class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch
                   Video</span></a> -->
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-
-
-    <!-- àpropos Section -->
-    <section id="àpropos" class="about  section-bg dark-background ">
-
-      <div class="container position-relative">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>À Propos</h2>
-        </div>
-        <div class="row gy-5">
-
-          <div class="content col-xl-5 d-flex flex-column" data-aos="fade-up" data-aos-delay="100">
-            <h3>Meilleures solutions de comparateur de prix</h3>
-            <p>
-              Le stress de se tromper et de signer le mauvais partenaire ? Un comparateur de prix peut changer notre
-              quotidien.
-              Solutions Express est le meilleur courtier en télécommunication & securité.
-              Nous intervenons pour vous guider à choisir l'idéale et la nécessaire solution sur le marché.
-            </p>
-            <!-- <a href="#" class="about-btn align-self-center align-self-xl-start"><span>About us</span> <i
-            class="bi bi-chevron-right"></i></a> -->
-          </div>
-
-          <div class="col-xl-7" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-briefcase"></i>
-                <h4><a class="stretched-link">Intervention rapide</a></h4>
-                <!-- <p>Le Centre Descartes est né en septembre 2004 de l’association de 2 amis, dont l’objectif était, et
-                  demeure encore, d’aider les élèves rencontrant des difficultés scolaires.</p> -->
-              </div><!-- Icon-Box -->
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-gem"></i>
-                <h4><a href="#équipe" class="stretched-link">Meilleures offres</a></h4>
-                <!-- <p>Depuis sa création, l’équipe pédagogique s’est agrandie et compte désormais 4 professeurs.</p> -->
-              </div><!-- Icon-Box -->
-
-              <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-broadcast"></i>
-                <h4><a class="stretched-link">Solutions sur mesure</a></h4>
-                <!-- <p>A ce jour, plus de 3500 élèves ont déjà fait confiance au Centre Descartes.</p> -->
-              </div><!-- Icon-Box -->
-
-              <!--   <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-easel"></i>
-                <h4><a class="stretched-link">Locaux</a></h4>
-                <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
-                  3 salles de cours.</p>
-              </div>Icon-Box -->
-
-            </div>
           </div>
 
         </div>
-
       </div>
+    </div>
 
-    </section><!-- /àpropos Section -->
-
-
-
-    <!-- offre 1 Section -->
-    <section id="offres" class="about section ">
-
-      <div class="container position-relative">
-        <div class="container section-title" data-aos="fade-up">
-          <h2>Offres</h2>
-        </div>
-        <div class="row gy-5">
-
-
-          <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
-              <h2><a class="stretched-link">Offre spéciale</a></h2>
-              <p style="color: black;">
-                Actuellement, nous vous proposons un package complet gratuit, comprenant des équipements d'une valeur de
-                1600 à 3000 dollars, à 0 $. Vous ne paierez que des mensualités très abordables pour la centrale. De
-                plus, nous avons des promotions spéciales en ce moment. Même si vous disposez déjà d'un système, nous
-                pouvons vous aider à le moderniser sans frais, tout en réduisant vos mensualités.
-              </p>
-            </div>
-
-            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
-              <h2><a class="stretched-link">Options de déménagement</a></h2>
-              <h5>En cas de déménagement, vous avez plusieurs solutions flexibles</h5>
-              <p style="color: black;">1-Transfert du système : Nous envoyons gratuitement un technicien pour
-                désinstaller et réinstaller le système dans votre nouveau domicile.</p>
-              <p style="color: black;">2-Transfert de contrat : Vous pouvez transférer votre contrat à un nouveau
-                propriétaire à votre ancienne adresse.</p>
-              <p style="color: black;">3-Installation dans votre nouveau domicile : Vous pouvez également transférer le
-                système dans votre nouvelle maison.</p>
-            </div>
-
-            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
-              <h2><a class="stretched-link">Avantages à la fin du contrat</a></h2>
-              <p style="color: black;">
-                À la fin de votre contrat, tous les équipements vous appartiendront. Vous bénéficierez d'un rabais sur
-                les mensualités pouvant atteindre 20%-30%, ainsi que d'une modernisation gratuite des équipements.
-                Pendant la durée du contrat, vous profiterez d'un service après-vente de qualité avec une garantie sur
-                les équipements.
-              </p>
-            </div>
+  </section><!-- /Hero Section -->
 
 
 
+  <!-- àpropos Section -->
+  <section id="àpropos" class="about  section-bg dark-background ">
 
-            <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
-              <h2><a class="stretched-link">Ajouter des équipements</a></h2>
-              <p style="color: black;">
-                Si vous souhaitez ajouter des équipements par la suite, je vous enverrai une soumission détaillée avec
-                tous les prix, ce qui vous permettra de prendre le temps de réfléchir en toute tranquillité.
-              </p>
-            </div>
-          </div>
-
-
-          <!--   <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-easel"></i>
-                <h4><a class="stretched-link">Locaux</a></h4>
-                <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
-                  3 salles de cours.</p>
-              </div>Icon-Box -->
-
-        </div>
+    <div class="container position-relative">
+      <div class="container section-title">
+        <h2>À Propos</h2>
       </div>
+      <div class="row gy-5">
 
-      </div>
-
-      </div>
-
-    </section><!-- /offre 1 Section -->
-
-
-
-
-
-    <!-- offres Section 2 -->
-    <section class="tabs section section-bg dark-background">
-      <div class="container position-relative">
-        <div class="section-title" data-aos="fade-up">
-          <!-- <h2>Offres</h2> -->
-          <p>Notre offre actuelle comprend des avantages et des promotions pour ce mois-ci
+        <div class="content col-xl-5 d-flex flex-column">
+          <h3>Meilleures solutions de comparateur de prix</h3>
+          <p>
+            Le stress de se tromper et de signer le mauvais partenaire ? Un comparateur de prix peut changer notre
+            quotidien.
+            Solutions Express est le meilleur courtier en télécommunication & securité.
+            Nous intervenons pour vous guider à choisir l'idéale et la nécessaire solution sur le marché.
           </p>
-          <h1 style="color:#3E98C7;">Les Équipements Gratuits</h1>
-
+          <!-- <a href="#" class="about-btn align-self-center align-self-xl-start"><span>About us</span> <i
+            class="bi bi-chevron-right"></i></a> -->
         </div>
 
-        <!-- Tab Navigation -->
-        <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
-          <li class="nav-item col-3">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tabs-tab-1">
-              <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile" style="width: 90px; height: auto;">
-              <h4 class="d-none d-lg-block">Panneau Tactile</h4>
-            </a>
-          </li><!--  -->
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-2">
-              <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="Contacts de Porte"
-                style="width: 70px; height: auto;">
-              <h4 class="d-none d-lg-block">Contacts de Porte</h4>
-            </a>
-          </li> <!--  -->
+        <div class="col-xl-7" data-aos-delay="200">
+          <div class="row gy-4">
 
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-3">
-              <!-- <i class="bi bi-brightness-high"></i> -->
+            <div class="col-md-6 icon-box position-relative">
+              <i class="bi bi-briefcase"></i>
+              <h4><a class="stretched-link">Intervention rapide</a></h4>
+              <!-- <p>Le Centre Descartes est né en septembre 2004 de l’association de 2 amis, dont l’objectif était, et
+                  demeure encore, d’aider les élèves rencontrant des difficultés scolaires.</p> -->
+            </div><!-- Icon-Box -->
 
-              <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
-                alt="PDétecteur de Mouvement" style="width: 70px; height: auto;">
-              <h4 class="d-none d-lg-block">Détecteur de Mouvement</h4>
-            </a>
-          </li> <!--  -->
+            <div class="col-md-6 icon-box position-relative">
+              <i class="bi bi-gem"></i>
+              <h4><a href="#équipe" class="stretched-link">Meilleures offres</a></h4>
+              <!-- <p>Depuis sa création, l’équipe pédagogique s’est agrandie et compte désormais 4 professeurs.</p> -->
+            </div><!-- Icon-Box -->
 
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-4">
-              <!-- <i class="bi bi-command"></i> -->
+            <div class="col-md-6 icon-box position-relative">
+              <i class="bi bi-broadcast"></i>
+              <h4><a class="stretched-link">Solutions sur mesure</a></h4>
+              <!-- <p>A ce jour, plus de 3500 élèves ont déjà fait confiance au Centre Descartes.</p> -->
+            </div><!-- Icon-Box -->
 
-              <img src="assets/img/eqp/cam1.png" alt="Caméra Analytique" style="width: 90px; height: auto;">
-              <h4 class="d-none d-lg-block">Caméra Analytique</h4>
-            </a>
-          </li> <!--  -->
+            <!--   <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a class="stretched-link">Locaux</a></h4>
+                <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
+                  3 salles de cours.</p>
+              </div>Icon-Box -->
 
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-5">
-              <!-- <i class="bi bi-command"></i> -->
-
-              <img src="assets/img/eqp/Application_mobile-removebg-preview.png" alt="Applications"
-                style="width: 90px; height: auto;">
-              <h4 class="d-none d-lg-block">Applications</h4>
-            </a>
-          </li>
-          <!--  -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-6">
-              <!-- <i class="bi bi-command"></i> -->
-              <img src="assets/img/eqp/ssssss.png" alt="Liaison à la Centrale" style="width: 90px; height: auto;">
-              <h4 class="d-none d-lg-block">Liaison à la Centrale</h4>
-            </a>
-          </li>
-          <!--  -->
-
-          <li class="nav-item col-3">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tabs-tab-7">
-              <!-- <i class="bi bi-command"></i> -->
-              <img src="assets/img/eqp/iii.png" alt="Liaison à la Centrale" style="width: 90px; height: auto;">
-              <h4 class="d-none d-lg-block">Installation</h4>
-            </a>
-          </li>
-          <!--  -->
-
-        </ul>
-
-        <!-- Tab Content -->
-        <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-          <!-- Panneau Tactile -->
-          <div class="tab-pane fade active show" id="tabs-tab-1">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Panneau Tactile Sans-Fil QOLSYS IQ PANEL 4</h3>
-                <p class="fst-italic">
-                  Notre dernier panneau tactile de pointe, conçu pour assurer une sécurité optimale et une utilisation
-                  conviviale.
-
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Sirène Intégrée : En cas de danger détecté, la sirène intégrée
-                    retentit dans toute votre maison, attirant immédiatement l'attention sur toute situation anormale.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Appareil Photo de 8 MP Intégré sur le Panneau : Une caméra haute
-                    résolution directement intégrée au panneau pour capturer des images nettes et utiles en cas
-                    d'événements importants.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Détecteur de bris de verre Intégré sur le Panneau : Toute casse
-                    de vitre dans un rayon de 40 pieds sera instantanément signalée à notre centrale de surveillance, et
-                    vous recevrez une notification sur votre téléphone pour une réaction rapide.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Carillon : Recevez un signal sonore à chaque ouverture de porte,
-                    idéal pour être informé des entrées et sorties, notamment si vous avez des enfants.
-
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Carte GSM LTE : Garantissez une liaison ininterrompue avec notre
-                    centrale grâce à une carte LTE, même en cas de coupure de lignes téléphoniques traditionnelles.
-
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Batterie de secours : Avec jusqu'à 80 heures d'autonomie en cas
-                    d'urgence, vous pouvez être sûr que votre système reste opérationnel même lors de pannes
-                    électriques.
-                  </li>
-                </ul>
-                <!--  <p>
-                  Nos professeurs qualifiés vous accompagnent individuellement pour garantir des progrès visibles.
-                </p>-->
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile Sans-Fil QOLSYS IQ PANEL 4"
-                  style="width: 300px; height: auto;">
-              </div>
-            </div>
           </div>
-
-          <!-- contacts de Porte  -->
-          <div class="tab-pane fade" id="tabs-tab-2">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Contacts de Porte Sans-Fils ( x2 )</h3>
-                <p>
-                  Nous protégerons toutes les portes donnant sur l'extérieur pour prévenir les intrusions. De plus, ces
-                  dispositifs vous tiendront informé de l'état de vos portes.
-
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Alimentation : Pile longue durée.
-                  </li>
-
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="contacts de Porte"
-                  style="width: 300px; height: auto;">
-
-              </div>
-            </div>
-          </div>
-
-          <!--  Détecteur de mouvement-->
-          <div class="tab-pane fade" id="tabs-tab-3">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Détecteur de mouvement</h3>
-                <p>
-                  Installé par un de nos techniciens, il sera positionné stratégiquement pour assurer une protection
-                  optimale contre les intrusions, notamment par les fenêtres.
-
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Alimentation : Pile longue durée.
-
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
-                  alt="Détecteur de mouvement" class="img-fluid">
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-          <!-- camera -->
-          <div class="tab-pane fade" id="tabs-tab-4">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Caméra Analytique Intérieure ou Extérieure</h3>
-                <p>
-                  Cette caméra polyvalente peut être programmée pour l'enregistrement par détection de mouvement avec
-                  une option de microphone pour surveiller votre commerce ou votre maison de manière efficace.
-
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Enregistrement vidéo qui commence dès que la caméra détecte du
-                    mouvement.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Application qui permet de regarder, de partager et d’enregistrer
-                    jusqu’à 3 000 vidéos.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Forfaits qui peuvent prendre en charge jusqu’à quatre caméras.
-
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/cam2.png" alt="camera" style="width: 200px; height: auto;">
-              </div>
-            </div>
-          </div>
-
-
-
-          <!-- app -->
-          <div class="tab-pane fade" id="tabs-tab-5">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Applications Alarm.com </h3>
-                <p>
-                  Permettent de :
-
-                </p>
-                <ul>
-                  <li><i class="bi bi-check2-all"></i> Armer et désarmer le système à distance.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Attribuer des codes à chaque utilisateur.</li>
-                  <li><i class="bi bi-check2-all"></i> Avoir l'historique des déplacements.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Notifications personnalisables selon le besoin.
-                  </li>
-                  <li><i class="bi bi-check2-all"></i> Option Bidirectionnelle.
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp//Application_mobile-removebg-preview.png" alt="App" class="img-fluid style="
-                  width: 300px; height: auto;">
-              </div>
-            </div>
-          </div>
-
-          <!-- centrale -->
-          <div class="tab-pane fade" id="tabs-tab-6">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>La Liaison à la centrale</h3>
-                <p>
-                  Reliée avec une ligne (LTE + APPLICATION)
-                  Nous exploitons des centres de télésurveillance homologués ULC qui se conforment aux normes nationales
-                  strictes concernant l’installation de systèmes de sécurité et le traitement des alarmes.
-
-                </p>
-                <!-- <ul>
-                  <li><i class="bi bi-check2-all"></i> Cours adaptés à tous les niveaux.</li>
-                  <li><i class="bi bi-check2-all"></i> Préparation aux examens internationaux.</li>
-                  <li><i class="bi bi-check2-all"></i> Sessions de conversation pour améliorer la fluidité à l'oral.
-                  </li>
-                </ul> -->
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/ssssss.png" alt="La Liaison à la centrale" class="img-fluid style=" width:
-                  900px; height: auto;">
-              </div>
-            </div>
-          </div>
-
-
-
-
-          <!-- instalasiton -->
-          <div class="tab-pane fade" id="tabs-tab-7">
-            <div class="row">
-              <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                <h3>Installation rapide et professionnelle
-                </h3>
-                <p>
-                  C'est un avantage considérable de notre système de sécurité, il peut être installé rapidement et de
-                  manière professionnelle sans nécessiter de modifications esthétiques majeures dans votre maison ou
-                  dans votre commerce , alors il n'y aura pas de travaux de rénovation à prévoir.
-                  Nous installerons le panneau tactile de 7 pouces de manière esthétique.
-                  Tous les autres composants de notre système, y compris les détecteurs de mouvement, les contacts de
-                  porte et les autres capteurs, sont sans fil. Cela signifie qu'ils peuvent être placés stratégiquement
-                  où vous le souhaitez sans les contraintes du câblage.
-                  Notre équipe de techniciens professionnels s'occupera de l'installation de manière rapide et efficace.
-                  Ils sont formés pour garantir que chaque composant est correctement positionné et configuré pour une
-                  sécurité optimale.
-
-                </p>
-                <!-- <ul>
-                  <li><i class="bi bi-check2-all"></i> Cours adaptés à tous les niveaux.</li>
-                  <li><i class="bi bi-check2-all"></i> Préparation aux examens internationaux.</li>
-                  <li><i class="bi bi-check2-all"></i> Sessions de conversation pour améliorer la fluidité à l'oral.
-                  </li>
-                </ul> -->
-              </div>
-              <div class="col-lg-6 order-1 order-lg-2 text-center">
-                <img src="assets/img/eqp/iii.png" alt="Installation rapide et professionnelle" class="img-fluid style="
-                  width: 300px; height: auto;">
-              </div>
-            </div>
-          </div>
-
-
-
         </div>
+
       </div>
-    </section>
 
-    <!-- partenaire1-->
-    <section class="clients section">
+    </div>
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  </section><!-- /àpropos Section -->
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
+
+
+  <!-- offre 1 Section -->
+  <section id="offres" class="about section ">
+
+    <div class="container position-relative">
+      <div class="container section-title">
+        <h2>Offres</h2>
+      </div>
+      <div class="row gy-5">
+
+
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+          <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+            <h2><a class="stretched-link">Offre spéciale</a></h2>
+            <p style="color: black;">
+              Actuellement, nous vous proposons un package complet gratuit, comprenant des équipements d'une valeur de
+              1600 à 3000 dollars, à 0 $. Vous ne paierez que des mensualités très abordables pour la centrale. De
+              plus, nous avons des promotions spéciales en ce moment. Même si vous disposez déjà d'un système, nous
+              pouvons vous aider à le moderniser sans frais, tout en réduisant vos mensualités.
+            </p>
+          </div>
+
+          <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+            <h2><a class="stretched-link">Options de déménagement</a></h2>
+            <h5>En cas de déménagement, vous avez plusieurs solutions flexibles</h5>
+            <p style="color: black;">1-Transfert du système : Nous envoyons gratuitement un technicien pour
+              désinstaller et réinstaller le système dans votre nouveau domicile.</p>
+            <p style="color: black;">2-Transfert de contrat : Vous pouvez transférer votre contrat à un nouveau
+              propriétaire à votre ancienne adresse.</p>
+            <p style="color: black;">3-Installation dans votre nouveau domicile : Vous pouvez également transférer le
+              système dans votre nouvelle maison.</p>
+          </div>
+
+          <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+            <h2><a class="stretched-link">Avantages à la fin du contrat</a></h2>
+            <p style="color: black;">
+              À la fin de votre contrat, tous les équipements vous appartiendront. Vous bénéficierez d'un rabais sur
+              les mensualités pouvant atteindre 20%-30%, ainsi que d'une modernisation gratuite des équipements.
+              Pendant la durée du contrat, vous profiterez d'un service après-vente de qualité avec une garantie sur
+              les équipements.
+            </p>
+          </div>
+
+
+
+
+          <div class="col-md-6 icon-box position-relative" style="flex: 0 0 300px;">
+            <h2><a class="stretched-link">Ajouter des équipements</a></h2>
+            <p style="color: black;">
+              Si vous souhaitez ajouter des équipements par la suite, je vous enverrai une soumission détaillée avec
+              tous les prix, ce qui vous permettra de prendre le temps de réfléchir en toute tranquillité.
+            </p>
+          </div>
+        </div>
+
+
+        <!--   <div class="col-md-6 icon-box position-relative">
+                <i class="bi bi-easel"></i>
+                <h4><a class="stretched-link">Locaux</a></h4>
+                <p> Situés entre la tour Vicor Hugo et la place Eugène Pelletan, les locaux du Centre Descartes comptent
+                  3 salles de cours.</p>
+              </div>Icon-Box -->
+
+      </div>
+    </div>
+
+    </div>
+
+    </div>
+
+  </section><!-- /offre 1 Section -->
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Offres Section -->
+  <section id="zzz" class="about section-bg dark-background"
+    style="background-color:#1B1B1B; color:#fff; padding:60px 0;">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5">
+        <p style="font-size:1.1rem; color:#ccc;">Notre offre actuelle comprend des avantages et des promotions pour ce
+          mois-ci</p>
+        <h1 style="color:#3E98C7; font-weight:700; font-size:2.5rem;">Les Équipements Gratuits</h1>
+        <hr style="width:60px; border:2px solid #3E98C7; margin:15px auto;">
+      </div>
+
+      <!-- Tab Navigation -->
+      <ul class="nav nav-tabs justify-content-center flex-wrap mb-4" id="offresTabs" role="tablist" style="gap:15px;">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-1" type="button">
+            <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile">
+            <span>Panneau Tactile</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-2" type="button">
+            <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="Contacts de Porte">
+            <span>Contacts de Porte</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-3" type="button">
+            <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+              alt="Détecteur de Mouvement">
+            <span>Détecteur Mouvement</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-4" type="button">
+            <img src="assets/img/eqp/cam1.png" alt="Caméra Analytique">
+            <span>Caméra Analytique</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab5-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-5" type="button">
+            <img src="assets/img/eqp/Application_mobile-removebg-preview.png" alt="Applications">
+            <span>Applications</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab6-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-6" type="button">
+            <img src="assets/img/eqp/ssssss.png" alt="Liaison à la Centrale">
+            <span>Liaison Centrale</span>
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab7-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-7" type="button">
+            <img src="assets/img/eqp/iii.png" alt="Installation">
+            <span>Installation</span>
+          </button>
+        </li>
+      </ul>
+
+      <!-- Tab Content -->
+      <div class="tab-content" id="offresTabsContent" data-aos-delay="200">
+
+        <!-- Tab 1 -->
+        <div class="tab-pane fade show active" id="tabs-tab-1">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Panneau Tactile Sans-Fil QOLSYS IQ PANEL 4</h3>
+              <p class="fst-italic" style="color:#ccc;">Notre dernier panneau tactile de pointe, conçu pour assurer
+                une sécurité optimale et une utilisation conviviale.</p>
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Sirène Intégrée</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Caméra 8 MP intégrée</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Détecteur de bris de vitre</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Carillon et notifications</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Carte GSM LTE</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Batterie secours jusqu'à 80h</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/iq-panel4.png" alt="Panneau Tactile" class="img-fluid" style="max-width:300px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2 -->
+        <div class="tab-pane fade" id="tabs-tab-2">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Contacts de Porte Sans-Fils (x2)</h3>
+              <p style="color:#ccc;">Nous protégerons toutes les portes donnant sur l'extérieur pour prévenir les
+                intrusions et vous tenir informé de l'état des portes.</p>
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Alimentation : Pile longue durée</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/052145_40e9-removebg-preview.png" alt="Contacts de Porte" class="img-fluid"
+                style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3 -->
+        <div class="tab-pane fade" id="tabs-tab-3">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Détecteur de Mouvement</h3>
+              <p style="color:#ccc;">Positionné stratégiquement pour assurer une protection optimale contre les
+                intrusions.</p>
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Alimentation : Pile longue durée</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/qolsys-qs1231-840-iq-motion-s-encrypted-motion-sensor-removebg-preview.png"
+                alt="Détecteur Mouvement" class="img-fluid" style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4 -->
+        <div class="tab-pane fade" id="tabs-tab-4">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Caméra Analytique</h3>
+              <p style="color:#ccc;">Caméra programmable par détection de mouvement avec option microphone pour
+                surveiller votre maison ou commerce.</p>
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Enregistrement dès détection mouvement
+                </li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Visionnage et partage jusqu'à 3000 vidéos
+                </li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Forfaits jusqu'à 4 caméras</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/cam2.png" alt="Caméra Analytique" class="img-fluid" style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 5 -->
+        <div class="tab-pane fade" id="tabs-tab-5">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Applications Alarm.com</h3>
+              <p style="color:#ccc;">Permettent de :</p>
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Armer et désarmer à distance</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Codes personnalisés pour utilisateurs</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Historique des déplacements</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Notifications personnalisables</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Option bidirectionnelle</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/Application_mobile-removebg-preview.png" alt="Applications" class="img-fluid">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 6 -->
+        <div class="tab-pane fade" id="tabs-tab-6">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Liaison à la Centrale</h3>
+              <p style="color:#ccc;">Reliée avec LTE + application. Centres de télésurveillance ULC respectant normes
+                nationales.</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/ssssss.png" alt="Liaison Centrale" class="img-fluid" style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 7 -->
+        <div class="tab-pane fade" id="tabs-tab-7">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Installation Rapide et Professionnelle</h3>
+              <p style="color:#ccc;">Installation esthétique, sans travaux majeurs. Tous les composants sont sans fil
+                et positionnés stratégiquement par nos techniciens professionnels.</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/eqp/iii.png" alt="Installation" class="img-fluid" style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- partenaire1-->
+  <section class="clients section">
+
+    <div class="container">
+
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
@@ -898,117 +960,127 @@
               }
             }
           </script>
-          <div class="swiper-wrapper justify-content-center">
-            <div class="swiper-slide"><img src="assets/img/clients/Gardaworld-Symbol.png" class="img-fluid"
-                alt="Gardaworld"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/download-removebg-preview.png" class="img-fluid"
-                alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/securitas-removebg-preview.png" class="img-fluid"
-                alt="Telus"></div>
-            <div class="swiper-slide"><img src="assets/img/clients/ADT-Logo.png" class="img-fluid" alt="Adt">
-            </div>
-            <!-- <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+        <div class="swiper-wrapper justify-content-center">
+          <div class="swiper-slide"><img src="assets/img/clients/Gardaworld-Symbol.png" class="img-fluid"
+              alt="Gardaworld"></div>
+          <div class="swiper-slide"><img src="assets/img/clients/download-removebg-preview.png" class="img-fluid"
+              alt=""></div>
+          <div class="swiper-slide"><img src="assets/img/clients/securitas-removebg-preview.png" class="img-fluid"
+              alt="Telus"></div>
+          <div class="swiper-slide"><img src="assets/img/clients/ADT-Logo.png" class="img-fluid" alt="Adt">
+          </div>
+          <!-- <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div> -->
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
-
+        <div class="swiper-pagination"></div>
       </div>
 
-    </section>
-    <!-- -->
-    <!-- Image Gallery Section -->
-    <section class="clients section-bg dark-background">
-      <div class="container" style="text-align:center; gap: 50px;">
-        <div class="gallery">
-          <!-- <img src="assets/img/eqp/bib-removebg-preview.png" class="gallery-item" alt="eqp de base"> -->
-          <img src="assets/img/88888888888888888.PNG" class="gallery-item" alt="camera">
-          <img src="assets/img/kokokokokoko.PNG" class="gallery-item" alt="camera">
-          <img src="assets/img/thefet.PNG" class="gallery-item" alt="camera">
-          <!-- <img src="assets/img/Capture1-removebg-preview.png" class="gallery-item" alt="app">
+    </div>
+
+  </section>
+  <!-- -->
+
+
+
+
+  <!-- Image Gallery Section -->
+  <section id="idimggalagala" class="clients section-bg dark-background">
+    <div class="container" style="text-align:center; gap: 50px;">
+      <div class="container section-title">
+        <h2>Image</h2>
+      </div>
+      <div class="gallery">
+        <!-- <img src="assets/img/eqp/bib-removebg-preview.png" class="gallery-item" alt="eqp de base"> -->
+        <img src="assets/img/88888888888888888.PNG" class="gallery-item" alt="camera">
+        <img src="assets/img/kokokokokoko.PNG" class="gallery-item" alt="camera">
+        <img src="assets/img/thefet.PNG" class="gallery-item" alt="camera">
+        <!-- <img src="assets/img/Capture1-removebg-preview.png" class="gallery-item" alt="app">
       <img src="assets/img/Capture2-removebg-preview.png" class="gallery-item" alt="app">
       <img src="assets/img/Capture3-removebg-preview.png" class="gallery-item" alt="app">
       <img src="assets/img/Capture4-removebg-preview.png" class="gallery-item" alt="app">
       <img src="assets/img/Capture5-removebg-preview.png" class="gallery-item" alt="app"> -->
-        </div>
       </div>
-    </section>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-      <span class="close">&times;</span>
-      <span class="arrow prev">&#10094;</span>
-      <span class="arrow next">&#10095;</span>
-      <img class="modal-content" id="modal-img">
     </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <span class="close">&times;</span>
+    <span class="arrow prev">&#10094;</span>
+    <span class="arrow next">&#10095;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
 
 
 
 
 
-    <!-- Video Gallery Section -->
-    <section class="video-gallery section" style="padding:50px 0; text-align:center;">
-      <div class="container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:90px;">
-        <!-- Video 1 -->
-        <div class="video-item" data-video="https://www.youtube.com/embed/Dn9q5ToBYeQ">
-          <img src="assets/img/video1-thumb.png.PNG" alt="Video 1" class="video-thumb"
-            style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
-          <p style="color:white; margin-top:5px;">Video 1</p>
-        </div>
-
-        <!-- Video 2 -->
-        <div class="video-item" data-video="https://www.youtube.com/embed/b12sdeX48P0">
-          <img src="assets/img/video2-thumb.png.PNG" alt="Video 2" class="video-thumb"
-            style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
-          <p style="color:white; margin-top:5px;">Video 2</p>
-        </div>
+  <!-- Video Gallery Section -->
+  <section id="video-gallery" class="video-gallery section" style="padding:50px 0; text-align:center;">
+    <div class="container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:90px;">
+      <div class="container section-title">
+        <h2>Vedio</h2>
       </div>
-      <!-- Video 3 -->
-      <!-- <div class="video-item" data-video="https://www.youtube.com/watch?v=lYQh8OaAp1E">
+      <!-- Video 1 -->
+      <div class="video-item" data-video="https://www.youtube.com/embed/Dn9q5ToBYeQ">
+        <img src="assets/img/video1-thumb.png.PNG" alt="Video 1" class="video-thumb"
+          style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+        <p style="color:white; margin-top:5px;">Video 1</p>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-item" data-video="https://www.youtube.com/embed/b12sdeX48P0">
+        <img src="assets/img/video2-thumb.png.PNG" alt="Video 2" class="video-thumb"
+          style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
+        <p style="color:white; margin-top:5px;">Video 2</p>
+      </div>
+    </div>
+    <!-- Video 3 -->
+    <!-- <div class="video-item" data-video="https://www.youtube.com/watch?v=lYQh8OaAp1E">
       <img src="assets/img/video2-thumb.png.PNG" alt="Video 2" class="video-thumb" style="width:250px; height:auto; cursor:pointer; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.3);">
       <p style="color:white; margin-top:5px;">Video 2</p>
     </div>
   </div> -->
-    </section>
+  </section>
 
-    <!-- Video Modal -->
-    <div id="video-modal"
-      style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:9999;">
-      <span id="video-close"
-        style="position:absolute; top:20px; right:30px; font-size:50px; color:white; cursor:pointer;">&times;</span>
-      <!-- <span id="video-prev" class="arrow">&#10094;</span>
+  <!-- Video Modal -->
+  <div id="video-modal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:9999;">
+    <span id="video-close"
+      style="position:absolute; top:20px; right:30px; font-size:50px; color:white; cursor:pointer;">&times;</span>
+    <!-- <span id="video-prev" class="arrow">&#10094;</span>
   <span id="video-next" class="arrow">&#10095;</span> -->
-      <iframe id="video-iframe" width="90%" height="80%" src="" frameborder="0" allow="autoplay; encrypted-media"
-        allowfullscreen style="max-width:1200px;"></iframe>
-    </div>
+    <iframe id="video-iframe" width="90%" height="80%" src="" frameborder="0" allow="autoplay; encrypted-media"
+      allowfullscreen style="max-width:1200px;"></iframe>
+  </div>
 
 
-    <!-- Avis Section 2-->
+  <!-- Avis Section 2-->
 
-    <section id="feedback" class="testimonials section-bg dark-background">
+  <section id="feedback" class="testimonials section-bg dark-background">
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Avis</h2>
+    <!-- Section Title -->
+    <div class="container section-title">
+      <h2>Avis</h2>
 
-        <div class="stars" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
-          <p style="margin: 0;">4,9</p>
-          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
-          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
-          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
-          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
-          <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+      <div class="stars" style="display: flex; justify-content: center; align-items: center; gap: 8px;">
+        <p style="margin: 0;">4,9</p>
+        <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+        <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+        <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+        <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
+        <i class="bi bi-star-fill" style="color: #FE9E2C;"></i>
 
-        </div>
-        <!-- <p> 211 avis</p> -->
-      </div><!-- End Section Title -->
+      </div>
+      <!-- <p> 211 avis</p> -->
+    </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="container">
 
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
@@ -1033,234 +1105,270 @@
               }
             }
           </script>
-          <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/unnamed.png" class="testimonial-img" alt="">
-                <h3> Marie-Danielle Tremblay </h3>
-                <!-- <h4>Terminale S</h4> -->
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span> J'ai été très satisfaite du service offert par Groupe Solutions Express. L’équipe a été rapide,
-                    efficace et courtoise à chaque interaction. </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/unnamed.png" class="testimonial-img" alt="">
+              <h3> Marie-Danielle Tremblay </h3>
+              <!-- <h4>Terminale S</h4> -->
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-            </div><!-- End testimonial item  Antoine-->
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span> J'ai été très satisfaite du service offert par Groupe Solutions Express. L’équipe a été rapide,
+                  efficace et courtoise à chaque interaction. </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item  Antoine-->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/bbbbbb.png" class="testimonial-img" alt="">
-                <h3>Manuel Crespo</h3>
-                <!-- <h4>Designer</h4> -->
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Très satisfaits du produit: il est fiable et convivial. C’est une grande amélioration
-                    comparativement au système que nous avions auparavant. Le service après vente est très bon. Nos
-                    remerciements à l’equipe.
-                  </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/bbbbbb.png" class="testimonial-img" alt="">
+              <h3>Manuel Crespo</h3>
+              <!-- <h4>Designer</h4> -->
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-            </div><!-- End testimonial item -->
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Très satisfaits du produit: il est fiable et convivial. C’est une grande amélioration
+                  comparativement au système que nous avions auparavant. Le service après vente est très bon. Nos
+                  remerciements à l’equipe.
+                </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/ccc.png" class="testimonial-img" alt="">
-                <h3>Esther Renaud</h3>
-                <!-- <h4>Store Owner</h4> -->
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Installation facile , rapide et efficace. Excellent service. </span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/ccc.png" class="testimonial-img" alt="">
+              <h3>Esther Renaud</h3>
+              <!-- <h4>Store Owner</h4> -->
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-            </div><!-- End testimonial item -->
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Installation facile , rapide et efficace. Excellent service. </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
 
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/bbb.png" class="testimonial-img" alt="">
-                <h3>Lustr'Auto St-Félix</h3>
-                <!-- <h4>Freelancer</h4> -->
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Très satisfait de Sed mon représentant et équipe installation .
-                    Très bon service .</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="assets/img/testimonials/bbb.png" class="testimonial-img" alt="">
+              <h3>Lustr'Auto St-Félix</h3>
+              <!-- <h4>Freelancer</h4> -->
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                  class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
               </div>
-            </div><!-- End testimonial item -->
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>Très satisfait de Sed mon représentant et équipe installation .
+                  Très bon service .</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End testimonial item -->
 
 
 
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
-
+        <div class="swiper-pagination"></div>
       </div>
 
-    </section>
+    </div>
 
-    <!-- agent Section -->
-    <section id="agent" class="team section ">
+  </section>
 
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Agent</h2>
-        <!-- <p>Med tlili/alex</p> -->
-      </div><!-- End Section Title -->
+  <!-- Agent Section -->
+  <section id="agent"">
+  <div class=" container section-title text-center">
+    <h2 style="color:#3E98C7;">Agent</h2>
+    </div>
 
-      <div class="container">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="team-member" style="text-align:center; margin:20px;">
+          <div class="member-img" style="position:relative; cursor:pointer;">
+            <img src="assets/img/team/1724941129451.jpg" class="img-fluid agent-photo" alt="M. Alex"
+              style="border-radius:10px; transition:0.3s;">
 
-        <div class="row gy-4">
+            <div class="overlay"
+              style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);  opacity:0; display:flex; justify-content:center; align-items:center; transition:0.3s; border-radius:10px;">
+              <span style="font-size:1.2rem;">Voir détails</span>
+            </div>
+          </div>
+          <div class="member-info mt-2">
+            <h4>M. Alex</h4>
+            <span>Technico commercial</span>
+            <span>450-382-0014</span>
+            <div class="social">
+              <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
+              <a href="https://www.facebook.com/mohamed.tliliiiii/"><i class="bi bi-facebook"></i></a>
+              <a href="https://www.instagram.com/tliliimohamed/"><i class="bi bi-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/mohamed-tlili-/"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class=" " data-aos="fade-up" data-aos-delay="100"
-            style="display: flex; justify-content: center; align-items: center;">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/1724941129451.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <!-- <a href=""><i class="bi bi-twitter-x"></i></a> -->
-                  <a href="https://www.facebook.com/mohamed.tliliiiii/"><i class="bi bi-facebook"></i></a>
-                  <a href="https://www.instagram.com/tliliimohamed/"><i class="bi bi-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/mohamed-tlili-/"><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>M. Alex </h4>
-                <span>Technico commercial</span>
-                <span>450-382-0014
-                </span>
-                <!-- <span>SIRET N° 478 773 542 00012</span> -->
+  <!-- Agent Modal -->
+  <div id="agentModal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); z-index:9999; justify-content:center; align-items:center;">
+
+
+    <div
+      style="position:relative; max-width:900px; width:90%; margin:50px auto; padding:30px; border-radius:10px; background:rgba(255,255,255,0.95); color:#000; display:flex; flex-wrap:wrap; gap:20px; font-family:sans-serif; box-shadow:0 5px 25px rgba(0,0,0,0.3);">
+
+      <!-- Close button -->
+      <span id="closeAgentModal"
+        style="position:absolute; top:10px; right:15px; font-size:2.5rem; cursor:pointer; color:#000;">&times;</span>
+
+      <!-- Image on the left -->
+      <div style="flex:1 1 250px; text-align:center;">
+        <img src="assets/img/team/1724941129451.jpg"
+          style="width:100%; max-width:250px; border-radius:10px; margin-bottom:10px;">
+      </div>
+
+      <!-- Content on the right -->
+      <div style="flex:2 1 400px; text-align:left;">
+        <h2 margin-bottom:10px;">M. Alex</h2>
+
+        <!-- Social links -->
+        <div class="social" style="margin-bottom:15px; font-size:1.2rem;">
+          <a href="https://www.facebook.com/mohamed.tliliiiii/" target="_blank"
+            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/tliliimohamed/" target="_blank"
+            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/mohamed-tlili-/" target="_blank"
+            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-linkedin"></i></a>
+        </div>
+
+        <!-- Info -->
+        <p><strong style="color:#3E98C7;">Poste:</strong> Technico commercial</p>
+        <p><strong style="color:#3E98C7;">Téléphone:</strong> 450-382-0014</p>
+        <p><strong style="color:#3E98C7;">Études:</strong><br>
+          Collège LaSalle Tunis 2017 – 2019<br>
+          GOMYCODE sept. 2023 – janv. 2024
+        </p>
+        <p><strong style="color:#3E98C7; margin-top:15px;">Infos:</strong><br>
+          Spécialisé dans le conseil et la mise en place de solutions de sécurité innovantes, j’accompagne particuliers
+          et
+          entreprises dans la protection de leurs biens et activités, en proposant des technologies modernes, fiables et
+          adaptées à leurs besoins.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section-bg dark-background ">
+
+    <!-- Section Title -->
+    <div class="container section-title contact-text-mobile"" data-aos=" fade-up">
+      <h2>Contact</h2>
+      <p>Je resterai à votre disposition tout au long de votre contrat, et même après. Pour toute information
+        supplémentaire ou pour obtenir un devis précis, n'hésitez pas à me communiquer vos disponibilités par
+        courriel. Je vous recontacterai au moment qui vous conviendra le mieux.
+      </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+        <div class="col-lg-6 ">
+          <div class="row gy-4">
+
+            <div class="col-lg-12">
+              <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos-delay="200">
+                <a href="https://maps.app.goo.gl/z9mjN8r7GKZzA9UK7" target="_blank">
+                  <i class="bi bi-geo-alt"></i>
+                </a>
+                <h3 style="color:#3E98C7;">Address</h3>
+                <p>4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada</p>
               </div>
             </div>
-          </div><!-- End Team Member -->
+            <!-- End Info Item -->
 
+            <div class="col-md-6">
+              <div class="info-item always-show d-flex flex-column justify-content-center align-items-center"
+                data-aos-delay="300">
+                <i style="color:#3E98C7;" class="bi bi-telephone"></i>
+                <h3 style="color:#3E98C7;">Appelez</h3>
+                <p>450-382-0014
+                </p>
+              </div>
+            </div><!-- End Info Item -->
 
+            <div class="col-md-6">
+              <div class="info-item always-show d-flex flex-column justify-content-center align-items-center"
+                data-aos-delay="400">
+                <i style="color:#3E98C7;" class="bi bi-envelope"></i>
+                <h3 style="color:#3E98C7;">Email</h3>
+                <p>mralexqcc@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
 
-
-
-
-
+          </div>
         </div>
 
-      </div>
+        <div class="col-lg-6">
 
-    </section><!-- /Team Section -->
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-bg dark-background">
+          <form id="contact-form" class="php-email-form" data-aos-delay="500">
 
-      <!-- Section Title -->
-      <div class="container section-title contact-text-mobile"" data-aos=" fade-up">
-        <h2>Contact</h2>
-        <p>Je resterai à votre disposition tout au long de votre contrat, et même après. Pour toute information
-          supplémentaire ou pour obtenir un devis précis, n'hésitez pas à me communiquer vos disponibilités par
-          courriel. Je vous recontacterai au moment qui vous conviendra le mieux.
-        </p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <div class="col-lg-6 ">
             <div class="row gy-4">
 
-              <div class="col-lg-12">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                  data-aos-delay="200">
-                  <a href="https://maps.app.goo.gl/z9mjN8r7GKZzA9UK7" target="_blank">
-                    <i class="bi bi-geo-alt"></i>
-                  </a>
-                  <h3>Address</h3>
-                  <p style=" ">4865 Rue Jean-Talon O suite 200, Montreal, Quebec H4P 1W7, Canada</p>
-                </div>
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
               </div>
-              <!-- End Info Item -->
 
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                  data-aos-delay="300">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Appelez</h3>
-                  <p>450-382-0014
-                  </p>
-                </div>
-              </div><!-- End Info Item -->
+              <div class="col-md-6 ">
+                <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+              </div>
 
-              <div class="col-md-6">
-                <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
-                  data-aos-delay="400">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email</h3>
-                  <p>mralexqcc@gmail.com</p>
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+              </div>
+
+              <div class="col-md-12">
+                <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
+              </div>
+
+              <div class="col-md-12 text-center">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <!-- Notification -->
+
+                <div id="form-notification"
+                  style="display:none; padding:15px; margin-bottom:15px; border-radius:5px; text-align:center; font-weight:bold;">
                 </div>
-              </div><!-- End Info Item -->
+                <button type="submit">Send Message</button>
+              </div>
 
             </div>
-          </div>
-
-          <div class="col-lg-6">
-
-
-            <form id="contact-form" class="php-email-form" data-aos="fade-up" data-aos-delay="500">
-
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="4" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-                  <!-- Notification -->
-
-                  <div id="form-notification"
-                    style="display:none; padding:15px; margin-bottom:15px; border-radius:5px; text-align:center; font-weight:bold;">
-                  </div>
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
+          </form>
+        </div><!-- End Contact Form -->
 
       </div>
 
-    </section><!-- /Contact Section -->
+    </div>
+
+  </section><!-- /Contact Section -->
 
   </main>
 
@@ -1296,6 +1404,8 @@
             <li><a href="#accueil" class="active" onclick="setActive(this)">Accueil</a></li>
             <li><a href="#àpropos" onclick="setActive(this)">À Propos</a></li>
             <li><a href="#offres" onclick="setActive(this)">Offres</a></li>
+            <li><a href="#idimggalagala" onclick="setActive(this)">Images</a></li>
+
 
 
 
@@ -1307,10 +1417,9 @@
           <h4></h4>
           <ul id="menu">
 
+            <li><a href="#video-gallery" onclick="setActive(this)">Vedio</a></li>
             <li><a href="#feedback" onclick="setActive(this)">Avis</a></li>
             <li><a href="#agent" onclick="setActive(this)">Agent</a></li>
-
-
             <li><a href="#contact" onclick="setActive(this)">Contact</a></li>
           </ul>
         </div>
@@ -1557,6 +1666,37 @@
     });
   </script>
 
+
+
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const agentModal = document.getElementById('agentModal');
+      const agentImg = document.querySelector('.member-img');
+      const closeAgentModal = document.getElementById('closeAgentModal');
+
+      // Make sure modal is hidden initially
+      agentModal.style.display = 'none';
+
+      // Open modal on click
+      agentImg.addEventListener('click', () => {
+        agentModal.style.display = 'flex';
+      });
+
+      // Close modal on close button
+      closeAgentModal.addEventListener('click', () => {
+        agentModal.style.display = 'none';
+      });
+
+      // Close modal when clicking outside the content
+      window.addEventListener('click', (e) => {
+        if (e.target === agentModal) {
+          agentModal.style.display = 'none';
+        }
+      });
+    });
+  </script>
 
 
 </body>
