@@ -170,6 +170,7 @@
     }
 
     .gallery {
+
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -178,6 +179,7 @@
     }
 
     .gallery-item {
+
       width: 200px;
       height: 120px;
       background: #222;
@@ -582,6 +584,29 @@
   </style>
 
 
+
+  <style>
+    @media (min-width: 992px) {
+      #video-gallery .video-thumb {
+        width: 850px !important;
+        /* bigger size on desktop */
+        /* border: 1px solid red;  */
+      }
+    }
+  </style>
+
+  <style>
+    /* By default, show desktop image and hide mobile image */
+    .hero-img.mobile-img {
+      display: none;
+    }
+
+    /* On mobile (max-width 768px), hide desktop image and show mobile image */
+    @media (max-width: 768px) {
+      .hero-img.desktop-img {
+        display: none;
+      }
+  </style>
 </head>
 
 <body class="index-page">
@@ -664,7 +689,9 @@
   <!-- accueil Section -->
   <section id="accueil" class="hero section ">
 
-    <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité">
+    <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité" class="hero-img desktop-img">
+    <!-- Mobile Image -->
+    /* <img src="assets/img/24-mobile.png" alt="Courtier Télécom & Sécurité" class="hero-img mobile-img"> */
 
     <div class="container">
       <div class="row">
@@ -1484,16 +1511,16 @@
 
       <!-- Content on the right -->
       <div style="flex:2 1 400px; text-align:left;">
-        <h2 margin-bottom:10px;">M. Alex</h2>
+        <h2 style="color:#3E98C7; margin-bottom:10px;">M. Alex</h2>
 
         <!-- Social links -->
         <div class="social" style="margin-bottom:15px; font-size:1.2rem;">
           <a href="https://www.facebook.com/mohamed.tliliiiii/" target="_blank"
-            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-facebook"></i></a>
+            style="color:#0d0d0e; margin-right:10px;"><i class="bi bi-facebook"></i></a>
           <a href="https://www.instagram.com/tliliimohamed/" target="_blank"
-            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-instagram"></i></a>
+            style="color:#0d0d0e; margin-right:10px;"><i class="bi bi-instagram"></i></a>
           <a href="https://www.linkedin.com/in/mohamed-tlili-/" target="_blank"
-            style="color:#3E98C7; margin-right:10px;"><i class="bi bi-linkedin"></i></a>
+            style="color:#0d0d0e; margin-right:10px;"><i class="bi bi-linkedin"></i></a>
         </div>
 
         <!-- Info -->
@@ -1510,6 +1537,7 @@
           <img src="assets/img/go_my_code_logo.ico" alt="GOMYCODE" style="height:25px; margin-right:8px;">
           <span>GOMYCODE (2023 – 2024)</span>
         </div>
+        <br>
         <p><strong style="color:#3E98C7; margin-top:15px;">Infos</strong><br>
           Spécialisé dans le conseil et la mise en place de solutions de sécurité innovantes, j’accompagne particuliers
           et
