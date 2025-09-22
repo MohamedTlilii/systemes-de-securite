@@ -47,20 +47,23 @@
       padding: 0;
       background: #111;
       color: #fff;
+
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 50px !important;
       padding: 50px 0;
     }
 
     .gallery-item {
-      width: 150px;
-      height: 100px;
-      object-fit: contain;
+
+      /* border: red 1px solid; */
+      width: 450px !important;
+      height: 250px !important;
+      /* object-fit: contain; */
       cursor: pointer;
       transition: transform 0.3s;
     }
@@ -134,6 +137,25 @@
     @media (max-width: 768px) {
       .arrow {
         display: none;
+      }
+    }
+
+
+
+
+    @media (max-width: 768px) {
+      .gallery {
+        justify-content: center;
+        /* center images */
+        gap: 20px;
+        /* smaller gap for mobile */
+      }
+
+      .gallery-item {
+        width: 80% !important;
+        /* make images fit nicely on mobile */
+        height: auto;
+        /* maintain aspect ratio */
       }
     }
   </style>
@@ -306,6 +328,7 @@
     }
   </style>
 
+
   <style>
     #àpropos.section-bg.dark-background,
     #contact.section-bg.dark-background,
@@ -450,6 +473,115 @@
     }
   </style>
 
+  <style>
+    .gallery-app-img {
+      width: 250px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-app-img:hover {
+      transform: scale(1.15);
+      /* Zoom in */
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      /* Nice shadow */
+      z-index: 10;
+    }
+  </style>
+
+
+
+  <style>
+    /* Desktop: keep your hover/zoom as-is (no change) */
+
+    /* Ensure container centers items */
+    .gallery-app {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* center horizontally */
+      gap: 55px;
+      /* your gap */
+    }
+
+    /* Each item centers its image */
+    .gallery-app-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: auto;
+    }
+
+    /* Image default (desktop) */
+    .gallery-app-img {
+      width: 250px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+    }
+
+    /* Hover zoom (desktop) */
+    .gallery-app-img:hover {
+      transform: scale(1.15);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      z-index: 10;
+    }
+
+    /* ===== Mobile adjustments ===== */
+    @media (max-width: 768px) {
+
+      .gallery-app {
+
+        flex-direction: column !important;
+        /* stack vertically */
+        align-items: center !important;
+        /* center all items */
+      }
+
+      .gallery-app-item {
+
+        max-width: 90%;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .gallery-app-img {
+        /* border: 1px solid red ; */
+        width: 180px !important;
+        ;
+        /* cap max width on phones */
+        transform: none !important;
+        /* disable hover transform on mobile */
+        box-shadow: none !important;
+      }
+    }
+  </style>
+
+  <style>
+    @media (max-width: 768px) {
+      .about .icon-box {
+        flex: 0 0 100% !important;
+        /* full width on mobile */
+        max-width: 100% !important;
+        text-align: center;
+        /* center the icons and text */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .about .icon-box i {
+        display: block;
+        /* make icon block to center it */
+        margin: 0 auto 10px auto;
+        /* center icon with bottom margin */
+      }
+    }
+  </style>
+
+
 </head>
 
 <body class="index-page">
@@ -532,7 +664,7 @@
   <!-- accueil Section -->
   <section id="accueil" class="hero section ">
 
-    <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité" data-aos="fade-in">
+    <img src="assets/img/24.png" alt="Courtier Télecome & Sécurité">
 
     <div class="container">
       <div class="row">
@@ -782,6 +914,12 @@
             <span>Installation</span>
           </button>
         </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tabs-tab-8" type="button">
+            <img src="assets/img/auto.png" alt="Autocollant">
+            <span>Autocollant</span>
+          </button>
+        </li>
       </ul>
 
       <!-- Tab Content -->
@@ -817,7 +955,7 @@
               <p style="color:#ccc;">Nous protégerons toutes les portes donnant sur l'extérieur pour prévenir les
                 intrusions et vous tenir informé de l'état des portes.</p>
               <ul>
-                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Alimentation : Pile longue durée</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Pile longue durée</li>
               </ul>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -835,7 +973,7 @@
               <p style="color:#ccc;">Positionné stratégiquement pour assurer une protection optimale contre les
                 intrusions.</p>
               <ul>
-                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Alimentation : Pile longue durée</li>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Pile longue durée</li>
               </ul>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 text-center">
@@ -861,7 +999,7 @@
               </ul>
             </div>
             <div class="col-lg-6 order-1 order-lg-2 text-center">
-              <img src="assets/img/eqp/cam2.png" alt="Caméra Analytique" class="img-fluid" style="max-width:250px;">
+              <img src="assets/img/eqp/cam2.png" alt="Caméra Analytique" class="img-fluid" style="width:250px;">
             </div>
           </div>
         </div>
@@ -871,7 +1009,7 @@
           <div class="row align-items-center">
             <div class="col-lg-6 order-2 order-lg-1">
               <h3 style="color:#3E98C7;">Applications Alarm.com</h3>
-              <p style="color:#ccc;">Permettent de :</p>
+              <!-- <p style="color:#ccc;">Permettent de :</p> -->
               <ul>
                 <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Armer et désarmer à distance</li>
                 <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Codes personnalisés pour utilisateurs</li>
@@ -891,8 +1029,17 @@
           <div class="row align-items-center">
             <div class="col-lg-6 order-2 order-lg-1">
               <h3 style="color:#3E98C7;">Liaison à la Centrale</h3>
-              <p style="color:#ccc;">Reliée avec LTE + application. Centres de télésurveillance ULC respectant normes
+              <p style="color:#ccc;">Centres de télésurveillance ULC respectant normes
                 nationales.</p>
+
+
+
+
+              <ul>
+                <li><i class="bi bi-check2-all" style="color:#3E98C7;"></i> Reliée avec LTE + Application</li>
+
+              </ul>
+
             </div>
             <div class="col-lg-6 order-1 order-lg-2 text-center">
               <img src="assets/img/eqp/ssssss.png" alt="Liaison Centrale" class="img-fluid" style="max-width:250px;">
@@ -913,6 +1060,52 @@
             </div>
           </div>
         </div>
+
+
+
+
+        <!-- Tab 8 -->
+        <div class="tab-pane fade" id="tabs-tab-8">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1">
+              <h3 style="color:#3E98C7;">Autocollant (x3)</h3>
+              <p style="color:#ccc;">Ces autocollants serviront de barrière psychologique contre le vol en les plaçant
+                stratégiquement tout autour de votre commerce. Ils indiqueront clairement que votre établissement est
+                protégé par une entreprise de sécurité de confiance, ce qui dissuadera efficacement les voleurs
+                potentiels.
+              </p>
+
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="assets/img/auto.png" alt="Autocollant" class="img-fluid" style="max-width:250px;">
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       </div>
 
@@ -991,9 +1184,11 @@
       <div class="container section-title">
         <h2>Image</h2>
       </div>
-      <div class="gallery">
+      <div class="gallery" id="cameraGalleryy">
         <!-- <img src="assets/img/eqp/bib-removebg-preview.png" class="gallery-item" alt="eqp de base"> -->
+
         <img src="assets/img/88888888888888888.PNG" class="gallery-item" alt="camera">
+        <img src="assets/img/777777777.PNG" class="gallery-item" alt="camera">
         <img src="assets/img/kokokokokoko.PNG" class="gallery-item" alt="camera">
         <img src="assets/img/thefet.PNG" class="gallery-item" alt="camera">
         <!-- <img src="assets/img/Capture1-removebg-preview.png" class="gallery-item" alt="app">
@@ -1002,9 +1197,54 @@
       <img src="assets/img/Capture4-removebg-preview.png" class="gallery-item" alt="app">
       <img src="assets/img/Capture5-removebg-preview.png" class="gallery-item" alt="app"> -->
       </div>
-    </div>
-  </section>
+      <p style="margin-top:8px; font-size:1.1rem; color:#fff9f9;">
+        Une fois la caméra installée, vous aurez l’esprit tranquille puisque vous pourrez garder l’œil sur l’extérieur
+        de votre domicile, où que vous soyez
+      </p>
+      <br>
+      <br>
+      <br>
+      <!-- Applications Gallery -->
+      <div class="gallery-app" style="display:flex; flex-wrap:wrap; gap:155px; justify-content:center; ">
 
+        <div class="gallery-app-item" style="text-align:center; max-width:120px;">
+          <img src="assets/img/Capture1-removebg-preview.png" alt="App 1" class="gallery-app-img"
+            style="width:250px; border-radius:8px; cursor:pointer; transition:transform 0.3s;">
+        </div>
+
+        <div class="gallery-app-item" style="text-align:center; max-width:120px;">
+          <img src="assets/img/Capture2-removebg-preview.png" alt="App 2" class="gallery-app-img"
+            style="width:250px; border-radius:8px; cursor:pointer; transition:transform 0.3s;">
+        </div>
+
+        <div class="gallery-app-item" style="text-align:center; max-width:120px;">
+          <img src="assets/img/Capture3-removebg-preview.png" alt="App 3" class="gallery-app-img"
+            style="width:250px; border-radius:8px; cursor:pointer; transition:transform 0.3s;">
+        </div>
+
+        <div class="gallery-app-item" style="text-align:center; max-width:120px;">
+          <img src="assets/img/Capture4-removebg-preview.png" alt="App 4" class="gallery-app-img"
+            style="width:250px; border-radius:8px; cursor:pointer; transition:transform 0.3s;">
+        </div>
+
+        <div class="gallery-app-item" style="text-align:center; max-width:120px;">
+          <img src="assets/img/Capture5-removebg-preview.png" alt="App 5" class="gallery-app-img"
+            style="width:250px; border-radius:8px; cursor:pointer; transition:transform 0.3s;">
+        </div>
+
+      </div>
+      <p style="margin-top:8px; font-size:1.1rem; color:#fff9f9;">Applications Alarm.com</p>
+
+    </div>
+
+  </section>
+  <!-- Modal for Enlarged Image -->
+  <div id="galleryAppModal"
+    style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:9999; justify-content:center; align-items:center;">
+    <span id="closeGalleryAppModal"
+      style="position:absolute; top:15px; right:25px; font-size:2.5rem; color:#fff; cursor:pointer;">&times;</span>
+    <img id="galleryAppModalImg" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+  </div>
   <!-- Modal -->
   <div class="modal" id="modal">
     <span class="close">&times;</span>
@@ -1257,13 +1497,20 @@
         </div>
 
         <!-- Info -->
-        <p><strong style="color:#3E98C7;">Poste:</strong> Technico commercial</p>
-        <p><strong style="color:#3E98C7;">Téléphone:</strong> 450-382-0014</p>
-        <p><strong style="color:#3E98C7;">Études:</strong><br>
-          Collège LaSalle Tunis 2017 – 2019<br>
-          GOMYCODE sept. 2023 – janv. 2024
-        </p>
-        <p><strong style="color:#3E98C7; margin-top:15px;">Infos:</strong><br>
+        <p><strong style="color:#3E98C7;">Poste</strong> Technico commercial</p>
+        <p><strong style="color:#3E98C7;">Téléphone</strong> 450-382-0014</p>
+        <p><strong style="color:#3E98C7;">Études</strong><br></p>
+        <div style="display:flex; align-items:center; margin-bottom:5px;">
+          <img src="assets/img/collge_lasalle_tunis_logo.ico" alt="Collège LaSalle"
+            style="height:25px; margin-right:8px;">
+          <span>Collège LaSalle (2017 – 2019)</span>
+        </div>
+
+        <div style="display:flex; align-items:center;">
+          <img src="assets/img/go_my_code_logo.ico" alt="GOMYCODE" style="height:25px; margin-right:8px;">
+          <span>GOMYCODE (2023 – 2024)</span>
+        </div>
+        <p><strong style="color:#3E98C7; margin-top:15px;">Infos</strong><br>
           Spécialisé dans le conseil et la mise en place de solutions de sécurité innovantes, j’accompagne particuliers
           et
           entreprises dans la protection de leurs biens et activités, en proposant des technologies modernes, fiables et
@@ -1698,7 +1945,31 @@
     });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const galleryImgs = document.querySelectorAll(".gallery-app-img");
+      const modal = document.getElementById("galleryAppModal");
+      const modalImg = document.getElementById("galleryAppModalImg");
+      const closeModal = document.getElementById("closeGalleryAppModal");
 
+      galleryImgs.forEach(img => {
+        img.addEventListener("click", () => {
+          modal.style.display = "flex";
+          modalImg.src = img.src;
+        });
+      });
+
+      closeModal.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
